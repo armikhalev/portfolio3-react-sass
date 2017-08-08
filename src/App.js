@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import Page0 from './pages/page0';
 import Page1 from './pages/page1';
@@ -10,25 +9,25 @@ import Navbar from './pages/nav-bar';
 import Footer from './pages/footer';
 
 class App extends Component {
-  render() {
-      return (
-			  <main>
+	render() {
+		return (
+			<main>
 
-		  <Navbar/>
-		  
+			  <Navbar/>
+			  
 			  <div id="home"></div>
 			  <Page0/>
 			  <Page1/>
 
-			  <div class="grey-line" id="myTools">
-			  	<h3 class="text-center lines">BUILDING WITH THE BEST TOOLS</h3>
+			  <div className="grey-line" id="myTools">
+			  	<h3 className="lines">BUILDING WITH THE BEST TOOLS</h3>
 			  </div>
 
 			  <Page2/>
 			  <Page3/>
 
-			  <div class="grey-blue-line" id="portfolio">
-			  	<h3 class="text-center lines">FEATURED WORKS</h3>
+			  <div className="grey-blue-line" id="portfolio">
+			  	<h3 className="lines">FEATURED WORKS</h3>
 			  </div>
 
 			  <Page4/>
@@ -37,10 +36,10 @@ class App extends Component {
 
 			  <Page5/>
 
-		  	<Footer/>
-		</main>			  
-    );
-  }
+		  	  <Footer/>
+			</main>			  
+		);
+	}
 }
 
 export default App;
