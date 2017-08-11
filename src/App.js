@@ -17,10 +17,12 @@ export default class App extends Component {
 		this.handleWheel = this.handleWheel.bind(this);		
 	}
 
-    handleWheel(e) {
-		let $arrowUp = ReactDOM.findDOMNode(this).getBoundingClientRect();
+    handleWheel() {
+		// Position of visible area related to the top of document
+		let $posTop = ReactDOM.findDOMNode(this).getBoundingClientRect();
 
-		this.arrowUp.displayArrowUp($arrowUp.top);
+		// Pass $posTop to ArrowUp component calling its method to display/hide it
+		this.arrowUp.displayArrowUp($posTop.top);
 		
 	}	
 
@@ -54,6 +56,11 @@ export default class App extends Component {
 			  <Page5/>
 
 		  	  <Footer/>
+
+			  {/* Get ref to an instance of ArrowUp to call here its method displayArrowUp,
+				* look up line 23:  		
+				* this.arrowUp.displayArrowUp($arrowUp.top);
+			  	*/}
 			  <ArrowUp ref={(elem) => {this.arrowUp = elem;} }/>		  
 
 			</main>			  
