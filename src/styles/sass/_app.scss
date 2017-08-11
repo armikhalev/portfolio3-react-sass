@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'basic title font';
+    src: url(../fonts/basic-title-font.ttf)
+}
+
+@font-face {
+    font-family: 'open sans condensed';
+    src: url(../fonts/OpenSansCondensed-Light.ttf)
+}
+
+// Overrides default 8px margin
+body {
+	margin: 0;
+}
+
+.main {
+	position:relative;
+}

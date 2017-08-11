@@ -1,0 +1,13 @@
+// arrow up
+.arrow-up {
+	position: fixed;
+	z-index: 1;
+	bottom: 20px;
+	right: 20px;
+
+	&:hover {
+		-webkit-filter: invert(100%);
+		filter: invert(100%)
+	}
+}
+

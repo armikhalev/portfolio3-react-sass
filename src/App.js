@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+import ArrowUp from "./partials/arrow-up";
 import Page0 from './pages/page0';
 import Page1 from './pages/page1';
 import Page2 from './pages/page2';
@@ -8,15 +11,29 @@ import Page5 from './pages/page5';
 import Navbar from './pages/nav-bar';
 import Footer from './pages/footer';
 
-class App extends Component {
+export default class App extends Component {
+	constructor(props) {
+		super(props);
+		this.handleWheel = this.handleWheel.bind(this);		
+	}
+
+    handleWheel(e) {
+		let $arrowUp = ReactDOM.findDOMNode(this).getBoundingClientRect();
+
+		this.arrowUp.displayArrowUp($arrowUp.top);
+		
+	}	
+
 	render() {
 		return (
-			<main>
+			
+			<main className="main" onWheel={this.handleWheel}>
 
 			  <Navbar/>
 			  
 			  <div id="home"></div>
 			  <Page0/>
+			   <div className="green-line" id="about"></div>
 			  <Page1/>
 
 			  <div className="grey-line" id="myTools">
@@ -37,9 +54,9 @@ class App extends Component {
 			  <Page5/>
 
 		  	  <Footer/>
+			  <ArrowUp ref={(elem) => {this.arrowUp = elem;} }/>		  
+
 			</main>			  
 		);
 	}
-}
-
-export default App;
+};

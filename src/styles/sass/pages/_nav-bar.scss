@@ -1,0 +1,44 @@
+.navbar {
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	
+	.navbar-brand img {
+		font-size: 18px;
+		position: fixed;
+		height: 2em;
+		top: 8px;
+		left: 15px;
+	}
+
+	.navbar-toggle {
+		position: fixed;
+		top: 8px;
+		right: 15px;
+		padding: 9px 10px;
+		background-color: transparent;
+		border: 1px solid black;
+		border-radius: 4px;
+		cursor: pointer;
+
+		&:hover {
+			background-color: #333;
+		}
+	}
+	
+	.icon-bar {
+		display: block;
+		background: white;
+		width: 22px;
+		height: 1px;
+	}
+
+	.icon-bar:nth-child(2) {
+	    margin-bottom: 5px;
+		margin-top: 5px;
+	}
+	
+	.navbar-collapse {
+		display: none;
+	}
+}

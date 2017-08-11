@@ -1,0 +1,45 @@
+#home {
+	visibility: none;
+}
+
+.page0 {
+	background: url(../images/bottom_banner.jpg);
+	position: relative;
+	height: 100vh;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+	padding-top: 1px; // Eliminates top gap caused by DOM
+	
+	.welcome {
+		position: relative;
+		top: 200px;
+	}
+	
+	h1, h2 {
+		color: #fff;
+		font-weight: 500;
+		line-height: 1.1;
+		text-align: center;
+	}
+	
+	h2 {
+		font-family: "Open Sans Condensed", sans-serif;
+		font-size: 5vw;
+		text-shadow: 0 3px 5px #000;
+	}
+	
+	h1 {
+		font-family: 'basic title font';
+		font-size: 13vw;
+		text-shadow: 6px 3px 5px #000;
+	}
+
+	// arrow down
+	.arrow-down {
+		position: absolute;
+		bottom: 35px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		width: 77px;
+	}
+}
