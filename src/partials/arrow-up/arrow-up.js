@@ -1,5 +1,5 @@
 import React, {Component } from 'react';
-import arrowUp from "../styles/images/arrow_up.png";
+import arrowUp from "./arrow_up.png";
 
 export default class ArrowUp extends Component {
 	constructor(props) {

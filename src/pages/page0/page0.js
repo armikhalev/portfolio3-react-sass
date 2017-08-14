@@ -1,5 +1,5 @@
 import React, {Component } from 'react';
-import arrowDown from "../styles/images/arrow_down.png";
+import arrowDown from "./arrow_down.png";
 
 export default class Page0 extends Component {
 	
