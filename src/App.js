@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 
 import ArrowUp from "./partials/arrow-up";
 import Page0 from './pages/page0';
@@ -12,19 +11,6 @@ import Navbar from './pages/nav-bar';
 import Footer from './pages/footer';
 
 export default class App extends Component {
-	constructor(props) {
-		super(props);
-		this.handleWheel = this.handleWheel.bind(this);		
-	}
-
-    handleWheel() {
-		// Position of visible area related to the top of document
-		let $posTop = ReactDOM.findDOMNode(this).getBoundingClientRect();
-
-		// Pass $posTop to ArrowUp component calling its method to display/hide it
-		this.arrowUp.displayArrowUp($posTop.top);
-		
-	}	
 
 	render() {
 		return (
@@ -57,11 +43,7 @@ export default class App extends Component {
 
 		  	  <Footer/>
 
-			  {/* Get ref to an instance of ArrowUp to call here its method displayArrowUp,
-				* look up line 23:  		
-				* this.arrowUp.displayArrowUp($arrowUp.top);
-			  	*/}
-			  <ArrowUp ref={(elem) => {this.arrowUp = elem;} }/>		  
+			  <ArrowUp />		  
 
 			</main>			  
 		);

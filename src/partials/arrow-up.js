@@ -4,27 +4,38 @@ import arrowUp from "../styles/images/arrow_up.png";
 export default class ArrowUp extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {display: "none"};
-		this.displayArrowUp = this.displayArrowUp.bind(this);
-		this.hideArrowUp = this.hideArrowUp.bind(this);
+		this.state = {opacity: 0};
+		this.handleScroll = this.handleScroll.bind(this);
 	}
 
-	displayArrowUp(posTop) {
-		if (posTop === 0) {		
-			this.setState({display: "none"});
-		}
-		else {
-			this.setState({display: "block"});
-		}
-	}
+	componentDidMount() {
+        this.handleScroll(); // initialize state
 
-	hideArrowUp() {
-		this.setState({display: "none"});
-	}
+        // Add all listeners which can start scroll
+        window.addEventListener('scroll', this.handleScroll);
+    }
 
+    componentWillUnmount() {
+        // Remove all listeners which was registered
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll() {
+        if (window.pageYOffset > 80) {
+            if (!this.state.opacity) {
+                this.setState({opacity: 1});
+            }
+        } else {
+            if (this.state.opacity) {
+                this.setState({opacity: 0})
+            }
+        }
+
+    }
+	
 	render() {
 		return (
-			<div className="arrow-up" style={this.state} onClick={this.hideArrowUp}>
+			<div className="arrow-up" style={this.state}>
 			  <a href="#home">
 				<img src={arrowUp} alt="arrow up"/>
 			  </a>
