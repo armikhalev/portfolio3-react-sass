@@ -12,7 +12,7 @@
 	},
 	"scripts": {
 		"build-css": "node-sass-chokidar src/ -o src/css/",
-		"watch-css": "npm run build-css && node-sass-chokidar ./node_modules src/ -o src/css/ --watch --recursive",
+		"watch-css": "npm run build-css && node-sass-chokidar src/ -o src/css/ --watch --recursive",
 		"start": "npm-run-all -p watch-css start-js",
 		"build": "npm run build-css && react-scripts build",
 		"start-js": "react-scripts start",
