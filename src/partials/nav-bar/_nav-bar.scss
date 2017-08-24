@@ -2,6 +2,7 @@
 	position: fixed;
 	top: 0;
 	z-index: 1;
+	width: 100%;
 	
 	.navbar-brand img {
 		font-size: 18px;
@@ -41,5 +42,40 @@
 	// Body of the navigation with links 
 	.navbar-collapse {
 		display: none;
+		text-align: center;
+		opacity: .9;
 	}
+
+	ul {
+		list-style: none;
+		background-color: #404040;
+		padding-left: 0;
+	}
+
+	li {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	li.active {
+		 background-color: #080808;
+	}
+
+	a {
+		text-decoration: none;
+		color: #fff;
+		opacity: .9;
+		font-size: 1.2em;
+
+		transition: color .3s ease-in-out;
+		-moz-transition: all ease-in-out .3s;
+		-webkit-transition: all ease-in-out .3s;
+		-o-transition: all ease-in-out .3s;
+		-ms-transition: all ease-in-out .3s
+	}
+
+	a:hover {
+		color: #9ee340;
+	}
+
 }
