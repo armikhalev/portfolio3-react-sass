@@ -11,14 +11,21 @@ import Page4 from './pages/page4';
 import Page5 from './pages/page5';
 
 export default class App extends Component {
+	constructor(props) {
+		super(props);
+		this.onToggleNavbarCollapse = this.onToggleNavbarCollapse.bind(this);
+	}
+
+	onToggleNavbarCollapse() {
+		this.refs.navbar.hideNavbar();
+    }
 
 	render() {
 		return (
+<main>
+			  <Navbar ref={"navbar"}/>
 			
-			<main className="main" onWheel={this.handleWheel}>
-
-			  <Navbar/>
-			  
+			<div className="main" onWheel={this.handleWheel} onClick={this.onToggleNavbarCollapse}>
 			  <div id="home"></div>
 			  <Page0/>
 			   <div className="green-line" id="about"></div>
@@ -45,7 +52,8 @@ export default class App extends Component {
 
 			  <ArrowUp />		  
 
-			</main>			  
+			</div>
+			</main>
 		);
 	}
 };

@@ -21,19 +21,24 @@ export default class Navbar extends Component {
 		};
 		this.toggleNavbarCollapse = this.toggleNavbarCollapse.bind(this);
 		this.handleLinkClick = this.handleLinkClick.bind(this);
+		this.hideNavbar = this.hideNavbar.bind(this);
 	}
 
 	handleLinkClick(activeLink) {
 		
 		this.setState({
-            active: activeLink
+            active: activeLink,
+			display: "none"
         });
     }
+
+	hideNavbar() {		
+		this.setState({display: "none"});
+	}
 	
-	// Set state of clicked, then change style by call to toggleDisplayStyle()
 	toggleNavbarCollapse(e) {
-		e.stopPropagation();
-		e.preventDefault();
+		// e.stopPropagation();
+		// e.preventDefault();
 		let display = this.state.display;
 		
 		if (display === "none") {
@@ -47,7 +52,7 @@ export default class Navbar extends Component {
 	
 	render() {
       return (
-		<nav className="navbar">
+		<nav className="navbar" >
 
 		  <button className="navbar-toggle" type="button" onClick={this.toggleNavbarCollapse}>
 			<span className="icon-bar"></span>

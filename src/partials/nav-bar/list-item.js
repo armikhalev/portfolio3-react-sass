@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 
 export default class ListItem extends Component {
 
-    handleLinkClick(link) {
+    getPropsLink_onClick(link) {
 		this.props.onLinkClick(link);
     }
 
 	render() {
 		return (
-			<li onClick={ this.handleLinkClick.bind(this, this.props.link) } className={this.props.active}>
-			  <a href={this.props.link}>{this.props.name}</a>
-			</li>
+			<a href={this.props.link}><li onClick={ this.getPropsLink_onClick.bind(this, this.props.link) } className={this.props.active}>
+			  {this.props.name}
+			</li></a>
 		);
 	}
 };
