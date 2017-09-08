@@ -15,4 +15,12 @@ body {
 
 .main {
 	position:relative;
+
+	
+	.green-line {
+		height: 56px;
+		background-color: #9ee340;
+		box-shadow: 0 -2em 50px rgba(0,0,0,0.8);
+	}
+
 }

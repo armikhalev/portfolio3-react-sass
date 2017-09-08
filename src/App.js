@@ -4,7 +4,7 @@ import Navbar from './partials/nav-bar/nav-bar';
 import Footer from './partials/footer';
 import ArrowUp from './partials/arrow-up/arrow-up';
 import Page0 from './pages/page0/page0';
-import Page1 from './pages/page1';
+import Page1 from './pages/page1/page1';
 import Page2 from './pages/page2';
 import Page3 from './pages/page3';
 import Page4 from './pages/page4';

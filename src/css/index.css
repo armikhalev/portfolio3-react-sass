@@ -11,12 +11,16 @@ body {
 
 .main {
   position: relative; }
+  .main .green-line {
+    height: 56px;
+    background-color: #9ee340;
+    box-shadow: 0 -2em 50px rgba(0, 0, 0, 0.8); }
 
 .arrow-up {
   position: fixed;
   z-index: 1;
   bottom: 20px;
-  right: 20px; }
+  right: 5px; }
   .arrow-up:hover {
     -webkit-filter: invert(100%);
     filter: invert(100%); }
@@ -89,7 +93,7 @@ body {
   padding-top: 1px; }
   .page0 .welcome {
     position: relative;
-    top: 200px; }
+    top: 80px; }
   .page0 h1, .page0 h2 {
     color: #fff;
     font-weight: 500;
@@ -110,3 +114,21 @@ body {
     right: 0;
     margin: 0 auto;
     width: 77px; }
+
+.page1 {
+  height: 29em; }
+  .page1 .about {
+    font-family: 'Alegreya Sans',sans-serif;
+    text-align: justify;
+    padding-left: 60px;
+    padding-right: 60px; }
+  .page1 h3 {
+    font-size: 24px;
+    top: 15px;
+    position: relative; }
+  .page1 .about-body {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.4; }
+  .page1 .avatar {
+    display: none; }
