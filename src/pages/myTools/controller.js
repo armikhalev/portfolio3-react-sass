@@ -14,7 +14,7 @@ export default class Page2 extends Component {
 	render() {
 		return (
 
-			<section className="page2">
+			<section className="myTools">
 			  <div className="upperSigns">
 				<img src={htmlCssJs} alt="sign html, css, js"/>
 				<img src={python} alt="sign python"/>

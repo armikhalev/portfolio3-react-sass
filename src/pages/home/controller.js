@@ -13,7 +13,7 @@ export default class Page0 extends Component {
 
 	render() {
 		return (
-			<section id="page0" className="page0" data-speed="14" data-type="background">
+			<section className="home" data-speed="14" data-type="background">
 			  
 			  <div className="welcome">
 				<h1>ARSENY MIKHALEV</h1>

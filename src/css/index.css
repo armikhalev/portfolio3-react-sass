@@ -93,32 +93,29 @@ body {
   .navbar a:hover {
     color: #9ee340; }
 
-#home {
-  visibility: none; }
-
-.page0 {
+.home {
   background: url(../images/bottom_banner.jpg);
   position: relative;
   height: 100vh;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
   padding-top: 1px; }
-  .page0 .welcome {
+  .home .welcome {
     position: relative;
     top: 80px; }
-  .page0 h1, .page0 h2 {
+  .home h1, .home h2 {
     color: #fff;
     font-weight: 500;
     line-height: 1.1;
     text-align: center; }
-  .page0 h2 {
+  .home h2 {
     font-family: "Open Sans Condensed", sans-serif;
     font-size: 5vw;
     text-shadow: 0 3px 5px #000; }
-  .page0 h1 {
+  .home h1 {
     font-family: 'basic title font';
     font-size: 13vw;
     text-shadow: 6px 3px 5px #000; }
-  .page0 .arrow-down {
+  .home .arrow-down {
     position: absolute;
     bottom: 35px;
     left: 0;
@@ -126,28 +123,30 @@ body {
     margin: 0 auto;
     width: 77px; }
 
-.page1 {
-  height: 29em; }
-  .page1 .about {
-    font-family: 'Alegreya Sans',sans-serif;
-    text-align: justify;
-    padding-left: 60px;
-    padding-right: 60px; }
-  .page1 h3 {
+.about {
+  height: 29em;
+  font-family: 'Alegreya Sans',sans-serif;
+  text-align: justify;
+  padding-left: 60px;
+  padding-right: 60px; }
+  .about h3 {
     font-size: 24px;
     top: 15px;
     position: relative; }
-  .page1 .about-body {
+  .about .about-body {
     font-size: 18px;
     font-weight: 300;
     line-height: 1.4; }
-  .page1 .avatar {
+  .about .avatar {
     display: none; }
 
-.page2 {
+.myTools {
   background: #9ee340;
   padding-left: 2em;
   padding-right: 2em; }
-  .page2 img {
+  .myTools img {
     width: 40%;
     padding: 1em; }
+
+.a_certificate {
+  width: 50%; }
