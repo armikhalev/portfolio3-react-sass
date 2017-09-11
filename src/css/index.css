@@ -15,6 +15,17 @@ body {
     height: 56px;
     background-color: #9ee340;
     box-shadow: 0 -2em 50px rgba(0, 0, 0, 0.8); }
+  .main .grey-line {
+    background-color: #7c7877;
+    box-shadow: -1em 0 15em #000;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    text-align: center; }
+    .main .grey-line h3 {
+      color: #FFF;
+      font-family: 'basic title font';
+      font-weight: lighter;
+      font-size: 5vw; }
 
 .arrow-up {
   position: fixed;
@@ -132,3 +143,11 @@ body {
     line-height: 1.4; }
   .page1 .avatar {
     display: none; }
+
+.page2 {
+  background: #9ee340;
+  padding-left: 2em;
+  padding-right: 2em; }
+  .page2 img {
+    width: 40%;
+    padding: 1em; }

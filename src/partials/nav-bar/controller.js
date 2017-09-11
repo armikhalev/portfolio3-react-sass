@@ -37,8 +37,6 @@ export default class Navbar extends Component {
 	}
 	
 	toggleNavbarCollapse(e) {
-		// e.stopPropagation();
-		// e.preventDefault();
 		let display = this.state.display;
 		
 		if (display === "none") {
@@ -47,31 +45,30 @@ export default class Navbar extends Component {
 		else {
 			this.setState({display: "none"});
 		}
-
 	}
 	
 	render() {
-      return (
-		<nav className="navbar" >
+		return (
+			<nav className="navbar" >
 
-		  <button className="navbar-toggle" type="button" onClick={this.toggleNavbarCollapse}>
-			<span className="icon-bar"></span>
-			<span className="icon-bar"></span>
-			<span className="icon-bar"></span>
-		  </button>
+			  <button className="navbar-toggle" type="button" onClick={this.toggleNavbarCollapse}>
+				<span className="icon-bar"></span>
+				<span className="icon-bar"></span>
+				<span className="icon-bar"></span>
+			  </button>
 
-		  <a className="navbar-brand" href="#home"><img src={logo} alt="arseny coding logo"/></a>
+			  <a className="navbar-brand" href="#home"><img src={logo} alt="arseny coding logo"/></a>
 
-		  <div className="navbar-collapse" style={{display: this.state.display}}>
-			<ul className="navbar-nav">
-			  {ListItemsValues.map((val) =>
-								   <ListItem onLinkClick={ this.handleLinkClick } active={this.state.active === val.link ? "active" : ""}
-											key={val.id} link={val.link} name={val.name}/>
-									 )}
+			  <div className="navbar-collapse" style={{display: this.state.display}}>
+				<ul className="navbar-nav">
+				  {ListItemsValues.map((val) =>
+									   <ListItem onLinkClick={ this.handleLinkClick } active={this.state.active === val.link ? "active" : ""}
+													 key={val.id} link={val.link} name={val.name}/>
+									  )}
 			</ul>
-		  </div>
+				</div>
 
-		</nav>
-    );
-  }
+			</nav>
+		);
+	}
 };
