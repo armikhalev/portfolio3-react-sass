@@ -13,46 +13,57 @@ import Page5 from './pages/page5';
 export default class App extends Component {
 	constructor(props) {
 		super(props);
+		
 		this.onToggleNavbarCollapse = this.onToggleNavbarCollapse.bind(this);
+		this.arrowUpClicked = this.arrowUpClicked.bind(this);
+		this.arrowDownClicked = this.arrowDownClicked.bind(this);
 	}
 
 	onToggleNavbarCollapse() {
 		this.refs.navbar.hideNavbar();
     }
 
+	arrowUpClicked() {
+		this.refs.navbar.handleLinkClick("#home");
+	}
+
+	arrowDownClicked() {
+		this.refs.navbar.handleLinkClick("#about");
+	}
+
 	render() {
 		return (
-<main>
+			<main>
 			  <Navbar ref={"navbar"}/>
-			
-			<div className="main" onWheel={this.handleWheel} onClick={this.onToggleNavbarCollapse}>
-			  <div id="home"></div>
-			  <Page0/>
-			   <div className="green-line" id="about"></div>
-			  <Page1/>
+			  
+			  <div className="main" onWheel={this.handleWheel} onClick={this.onToggleNavbarCollapse}>
+				<div id="home"></div>
+				<Page0 parentClickHandler={this.arrowDownClicked}/>
+				<div className="green-line" id="about"></div>
+				<Page1/>
 
-			  <div className="grey-line" id="myTools">
-			  	<h3 className="lines">BUILDING WITH THE BEST TOOLS</h3>
+				<div className="grey-line" id="myTools">
+			  	  <h3 className="lines">BUILDING WITH THE BEST TOOLS</h3>
+				</div>
+
+				<Page2/>
+				<Page3/>
+
+				<div className="grey-blue-line" id="portfolio">
+			  	  <h3 className="lines">FEATURED WORKS</h3>
+				</div>
+
+				<Page4/>
+
+				<div id="contact"></div>
+
+				<Page5/>
+
+		  		<Footer/>
+
+				<ArrowUp parentClickHandler={this.arrowUpClicked}/>		  
+
 			  </div>
-
-			  <Page2/>
-			  <Page3/>
-
-			  <div className="grey-blue-line" id="portfolio">
-			  	<h3 className="lines">FEATURED WORKS</h3>
-			  </div>
-
-			  <Page4/>
-
-			  <div id="contact"></div>
-
-			  <Page5/>
-
-		  	  <Footer/>
-
-			  <ArrowUp />		  
-
-			</div>
 			</main>
 		);
 	}

@@ -6,6 +6,7 @@ export default class ArrowUp extends Component {
 		super(props);
 		this.state = {opacity: 0};
 		this.handleScroll = this.handleScroll.bind(this);
+		this.arrowUpClicked = this.arrowUpClicked.bind(this);
 	}
 
 	componentDidMount() {
@@ -27,15 +28,18 @@ export default class ArrowUp extends Component {
             }
         } else {
             if (this.state.opacity) {
-                this.setState({opacity: 0})
+                this.setState({opacity: 0});
             }
         }
-
     }
+
+	arrowUpClicked() {
+		this.props.parentClickHandler();
+	}
 	
 	render() {
 		return (
-			<div className="arrow-up" style={this.state}>
+			<div className="arrow-up" style={this.state} onClick={this.arrowUpClicked}>
 			  <a href="#home">
 				<img src={arrowUp} alt="arrow up"/>
 			  </a>
