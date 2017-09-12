@@ -1,0 +1,10 @@
+@mixin transform-scale($x,$y) {
+	-webkit-transform: scale($x,$y);
+	-ms-transform: scale($x,$y);
+	transform: scale($x,$y);
+}
+
+@mixin filter-brightness($num) {
+    filter: brightness($num);
+    -webkit-filter: brightness($num);
+}

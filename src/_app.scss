@@ -31,10 +31,7 @@ body {
 		text-align: center;
 
 		h3 {
-			color: #FFF;
-			font-family: 'basic title font';
-			font-weight: lighter;
-			font-size: 5vw;
+			@include basic-title-font-h3;
 		}
 	}
 

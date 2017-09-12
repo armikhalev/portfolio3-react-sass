@@ -7,7 +7,7 @@ import Home from './pages/home/controller';
 import About from './pages/about/controller';
 import MyTools from './pages/myTools/controller';
 import Certifications from './pages/certifications/controller';
-import Page4 from './pages/page4';
+import Portfolio from './pages/portfolio/controller';
 import Page5 from './pages/page5';
 
 export default class App extends Component {
@@ -43,17 +43,17 @@ export default class App extends Component {
 				<About/>
 
 				<div className="grey-line" id="myTools">
-			  	  <h3 className="lines">BUILDING WITH THE BEST TOOLS</h3>
+			  	  <h3>BUILDING WITH THE BEST TOOLS</h3>
 				</div>
 
 				<MyTools/>
 				<Certifications/>
 
 				<div className="grey-blue-line" id="portfolio">
-			  	  <h3 className="lines">FEATURED WORKS</h3>
+			  	  <h3>FEATURED WORKS</h3>
 				</div>
 
-				<Page4/>
+				<Portfolio/>
 
 				<div id="contact"></div>
 

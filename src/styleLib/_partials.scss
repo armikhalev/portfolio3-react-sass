@@ -1,0 +1,31 @@
+@mixin hover-effect {
+
+	& img {
+		width: 100%;
+		transition: filter .35s;
+	}
+
+	&:hover img {
+		@include filter-brightness(0.6);
+	}
+
+	h2 {
+		position: absolute;
+		font-size: 17px;
+		color: #FFF;
+		text-transform: uppercase;
+		font-weight: 500;
+		text-align: center;
+		opacity: 0;
+		padding-left: 2em;
+		padding-right: 2em;
+		transition: opacity 0.35s, transform .35s;
+		@include transform-scale(0,1);
+	}
+
+	&:hover h2 {
+		opacity: 1;
+		@include transform-scale(1,1);
+	}
+
+}

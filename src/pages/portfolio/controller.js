@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FeaturedWork from '../partials/featured-work';
+import FeaturedWork from './featured-work/controller';
 
 export default class Page4 extends Component {
   render() {

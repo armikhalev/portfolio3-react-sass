@@ -4,8 +4,8 @@ import Certificate from './certificate/controller';
 export default class Certifications extends Component {
 	render() {
 		return (
-			<section id="certifications">
-              <h3 className="text-center lines">CERTIFICATES</h3>
+			<section id="certifications" className="certifications">
+              <h3>CERTIFICATES</h3>
               
               <Certificate  
                 src={"http://res.cloudinary.com/amikhalev/image/upload/v1460949596/progevpython.jpg"} 

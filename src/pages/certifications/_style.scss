@@ -1,3 +1,13 @@
 @import './certificate/_style';
 
-.page3{}
+.certifications {
+	padding-top: 1em;
+	padding-left: 2em;
+	padding-right: 2em;
+
+	h3 {
+		@include basic-title-font-h3;
+		color: #333; // override
+		text-align: center;
+	}
+}
