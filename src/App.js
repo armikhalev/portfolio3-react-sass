@@ -24,11 +24,11 @@ export default class App extends Component {
     }
 
 	arrowUpClicked() {
-		this.refs.navbar.handleLinkClick("#home");
+		this.refs.navbar.handleLinkClick("home");
 	}
 
 	arrowDownClicked() {
-		this.refs.navbar.handleLinkClick("#about");
+		this.refs.navbar.handleLinkClick("about");
 	}
 
 	render() {

@@ -8,9 +8,9 @@ export default class ListItem extends Component {
 
 	render() {
 		return (
-			<a href={this.props.link}><li onClick={ this.getPropsLink_onClick.bind(this, this.props.link) } className={this.props.active}>
+				<li onClick={ this.getPropsLink_onClick.bind(this, this.props.link) } className={this.props.active}>
 			  {this.props.name}
-			</li></a>
+			</li>
 		);
 	}
 };

@@ -21,9 +21,9 @@ export default class Page0 extends Component {
 				<h2>on the foundation of elegant code</h2>
 			  </div>
 
-			  <a className="arrow-down" href="#about" onClick={this.arrowDownClicked}>
+			  <div className="arrow-down" href="#about" onClick={this.arrowDownClicked}>
 				<img src={arrowDown} alt="arrow-down"/>
-			  </a>
+			  </div>
 
 			</section>
 

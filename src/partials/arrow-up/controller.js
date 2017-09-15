@@ -40,9 +40,7 @@ export default class ArrowUp extends Component {
 	render() {
 		return (
 			<div className="arrow-up" style={this.state} onClick={this.arrowUpClicked}>
-			  <a href="#home">
 				<img src={arrowUp} alt="arrow up"/>
-			  </a>
 			</div>
 		);
 	}
