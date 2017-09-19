@@ -38,17 +38,17 @@ export default class App extends Component {
 			  
 			  <div className="main" onWheel={this.handleWheel} onClick={this.onToggleNavbarCollapse}>
 				<Home parentClickHandler={this.arrowDownClicked}/>
-				<div className="green-line" id="about"></div>
+				<div className="about-line" id="about"></div>
 				<About/>
 
-				<div className="grey-line" id="myTools">
+				<div className="tools-line" id="myTools">
 			  	  <h3>BUILDING WITH THE BEST TOOLS</h3>
 				</div>
 
 				<MyTools/>
 				<Certifications/>
 
-				<div className="grey-blue-line" id="portfolio">
+				<div className="portfolio-line" id="portfolio">
 			  	  <h3>FEATURED WORKS</h3>
 				</div>
 

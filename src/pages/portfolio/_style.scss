@@ -1,9 +1,12 @@
 @import './featured-work/_style';
 
 .portfolio {
-    box-shadow: inset 0 2em 50px -15px rgba(0,0,0,0.8);
+	background: url(../images-css/damask_vignette.jpg);
+	box-shadow: inset 0 2em 50px -15px rgba(0,0,0,0.8);
     padding-left: 2em;
     padding-right: 2em;
+	padding-top: 2em;
+	padding-bottom: 4em;
 
 	.videoblesk {
 		@include transform-translate(0,-20%);

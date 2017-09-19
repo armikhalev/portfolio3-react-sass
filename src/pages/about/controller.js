@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import picture from "./arsenythinksgrey.png";
 
-export default class Page1 extends Component {
+export default class About extends Component {
     render() {
         return (
             <section className="about">

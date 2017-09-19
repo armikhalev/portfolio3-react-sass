@@ -10,7 +10,7 @@ import bootstrap from './images/bootstrap.png';
 import wordpress from './images/wordpress.png';
 import mysql from './images/mysql.png';
 
-export default class Page2 extends Component {
+export default class MyTools extends Component {
 	render() {
 		return (
 

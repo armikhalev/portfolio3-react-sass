@@ -1,7 +1,7 @@
 import React, {Component } from 'react';
 import arrowDown from "./arrow_down.png";
 
-export default class Page0 extends Component {
+export default class Home extends Component {
 	constructor(props) {
 		super(props);
 		this.arrowDownClicked = this.arrowDownClicked.bind(this);

@@ -1,0 +1,58 @@
+@mixin contact-input {	
+	border-radius: 6px;
+	border: medium solid #000;
+	box-sizing: border-box; // Important for responsiveness
+	font-size: 23px;
+	margin-bottom: 1em;
+	padding-left: 1em;
+	position: relative;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	width: 100%;
+	
+	&:focus {
+		-webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);
+		border-color: #9ee340;
+		box-shadow: 0 0 50px rgba(0,0,0,0.8);
+		outline: 0;
+	}
+}
+
+.contact {
+	box-shadow: 0 -2em 50px 15px rgba(0,0,0,0.8);
+	height: 760px;
+	padding-left: 2em;
+	padding-right: 2em;
+	padding-top: 2em;
+	
+	h4 {
+		@include basic-title-font-h3;
+		color: #000;
+		margin: 0; // Overrides browser default
+		text-align: center;
+	}
+
+	h5 {
+		font-size: 24px;
+		font-weight: 500;
+		text-align: center;
+	}
+
+	.name-input {
+		@include contact-input;
+		height: 3em;
+	}
+
+	.email-input {
+		@include contact-input;
+		height: 3em;
+	}
+
+	textarea {
+		@include contact-input;
+		padding-top: .6em;
+	}
+
+	button {
+		
+	}
+}

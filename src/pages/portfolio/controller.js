@@ -6,13 +6,12 @@ import videblesk from './images/VideoBlesk_rama.png';
 import crispythoughts from './images/CrispyThoughts_rama.png';
 import portfolio_rama from './images/Portfolio_rama.png';
 import Mela_rama from './images/Mela_rama.png';
-import backGround from './images/damask_vignette.jpg';
 
 export default class Portfolio extends Component {
 	render() {
 		
 		return (
-			<section className="portfolio" style={{background: 'url('+backGround+')'}}>
+			<section className="portfolio">
 			  
 			  <FeaturedWork
 				className={"melasi"}

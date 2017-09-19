@@ -21,13 +21,13 @@ body {
 .main {
 	position:relative;
 
-	.green-line {
+	.about-line {
 		height: 56px;
 		background-color: #9ee340;
 		box-shadow: 0 -2em 50px rgba(0,0,0,0.8);
 	}
 
-	.grey-line {
+	.tools-line {
 		background-color: #7c7877;
 		box-shadow: -1em 0 15em #000;
 		padding-top: 1.5em;
@@ -39,12 +39,12 @@ body {
 		}
 	}
 
-	.grey-blue-line {
+	.portfolio-line {
 		background-color: #39393a;
-		box-shadow: -1em 0 15em #000;
 		padding-top: 2em;
 		padding-bottom: 2em;
 		text-align: center;
+		
 		h3 {
 			@include basic-title-font-h3;
 		}
