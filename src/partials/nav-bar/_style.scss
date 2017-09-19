@@ -3,7 +3,7 @@
 	top: 0;
 	z-index: 1;
 	width: 100%;
-	
+
 	.navbar-brand img {
 		font-size: 18px;
 		position: fixed;
@@ -40,8 +40,7 @@
 	}
 	
 	// Body of the navigation with links 
-	.navbar-collapse {
-		// display: none;
+	.navbar-collapse { 
 		text-align: center;
 		opacity: .9;
 		top: -252px;

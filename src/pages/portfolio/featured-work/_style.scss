@@ -1,4 +1,13 @@
-.hovereffect {
-	color: red;
+.a_featauredWork {
+	position: relative;
+	display: inline-block;
+	width: calc(50% - .5em);
+	margin-left: .5em;
+	
 	@include hover-effect;
+	
+	h2 {
+		@include center-all;
+		top: 20%;
+	}
 }

@@ -8,7 +8,7 @@ import About from './pages/about/controller';
 import MyTools from './pages/myTools/controller';
 import Certifications from './pages/certifications/controller';
 import Portfolio from './pages/portfolio/controller';
-import Page5 from './pages/page5';
+import Contact from './pages/contact/controller';
 
 export default class App extends Component {
 	constructor(props) {
@@ -37,7 +37,6 @@ export default class App extends Component {
 			  <Navbar ref={"navbar"}/>
 			  
 			  <div className="main" onWheel={this.handleWheel} onClick={this.onToggleNavbarCollapse}>
-				<div id="home"></div>
 				<Home parentClickHandler={this.arrowDownClicked}/>
 				<div className="green-line" id="about"></div>
 				<About/>
@@ -55,9 +54,7 @@ export default class App extends Component {
 
 				<Portfolio/>
 
-				<div id="contact"></div>
-
-				<Page5/>
+				<Contact/>
 
 		  		<Footer/>
 

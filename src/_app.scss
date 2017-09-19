@@ -39,4 +39,15 @@ body {
 		}
 	}
 
+	.grey-blue-line {
+		background-color: #39393a;
+		box-shadow: -1em 0 15em #000;
+		padding-top: 2em;
+		padding-bottom: 2em;
+		text-align: center;
+		h3 {
+			@include basic-title-font-h3;
+		}
+	}
+
 }

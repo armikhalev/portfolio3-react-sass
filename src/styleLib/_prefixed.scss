@@ -4,6 +4,12 @@
 	transform: scale($x,$y);
 }
 
+@mixin transform-translate($x,$y) {
+	-webkit-transform: translate($x,$y);
+	-ms-transform: translate($x,$y);
+	transform: translate($x,$y);
+}
+
 @mixin filter-brightness($num) {
     filter: brightness($num);
     -webkit-filter: brightness($num);

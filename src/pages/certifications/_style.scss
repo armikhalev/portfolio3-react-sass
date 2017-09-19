@@ -1,10 +1,11 @@
 @import './certificate/_style';
 
-.certifications {
+.certificates {
 	padding-top: 1em;
 	padding-left: 2em;
 	padding-right: 2em;
-
+	padding-bottom: 4em;
+	
 	h3 {
 		@include basic-title-font-h3;
 		color: #333; // override

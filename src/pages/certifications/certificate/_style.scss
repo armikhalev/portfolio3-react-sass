@@ -2,15 +2,17 @@
 	position: relative;
 	margin-bottom: 5px;
 
-	&:hover h2 {
+	@include hover-effect;
+
+	// Adds bottom and top lines
+	h2 {
+		@include center-all;
+		
 		top: 1em;
 		bottom: 1em;
 		padding-top: 2em;
-		margin-left: 1em;
-		margin-right: 1em;
 		border-bottom: 1px solid #fff;
 		border-top: 1px solid #fff;
-	}
-	
-	@include hover-effect;
+		width: 80%;
+	}	
 }

@@ -28,6 +28,17 @@ body {
       font-family: 'basic title font';
       font-weight: lighter;
       font-size: 5vw; }
+  .main .grey-blue-line {
+    background-color: #39393a;
+    box-shadow: -1em 0 15em #000;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    text-align: center; }
+    .main .grey-blue-line h3 {
+      color: #FFF;
+      font-family: 'basic title font';
+      font-weight: lighter;
+      font-size: 5vw; }
 
 .arrow-up {
   position: fixed;
@@ -143,7 +154,6 @@ body {
   background: #9ee340;
   padding-left: 2em;
   padding-right: 2em;
-  height: 45em;
   box-shadow: inset 0 -2em 50px rgba(0, 0, 0, 0.4); }
   .myTools img {
     width: 40%;
@@ -152,14 +162,6 @@ body {
 .a_certificate {
   position: relative;
   margin-bottom: 5px; }
-  .a_certificate:hover h2 {
-    top: 1em;
-    bottom: 1em;
-    padding-top: 2em;
-    margin-left: 1em;
-    margin-right: 1em;
-    border-bottom: 1px solid #fff;
-    border-top: 1px solid #fff; }
   .a_certificate img {
     width: 100%;
     transition: filter .35s; }
@@ -174,8 +176,6 @@ body {
     font-weight: 500;
     text-align: center;
     opacity: 0;
-    padding-left: 2em;
-    padding-right: 2em;
     transition: opacity 0.35s, transform .35s;
     -webkit-transform: scale(0, 1);
     -ms-transform: scale(0, 1);
@@ -185,12 +185,26 @@ body {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     transform: scale(1, 1); }
+  .a_certificate h2 {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    top: 1em;
+    bottom: 1em;
+    padding-top: 2em;
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+    width: 80%; }
 
-.certifications {
+.certificates {
   padding-top: 1em;
   padding-left: 2em;
-  padding-right: 2em; }
-  .certifications h3 {
+  padding-right: 2em;
+  padding-bottom: 4em; }
+  .certificates h3 {
     color: #FFF;
     font-family: 'basic title font';
     font-weight: lighter;
@@ -198,15 +212,18 @@ body {
     color: #333;
     text-align: center; }
 
-.hovereffect {
-  color: red; }
-  .hovereffect img {
+.a_featauredWork {
+  position: relative;
+  display: inline-block;
+  width: calc(50% - .5em);
+  margin-left: .5em; }
+  .a_featauredWork img {
     width: 100%;
     transition: filter .35s; }
-  .hovereffect:hover img {
+  .a_featauredWork:hover img {
     filter: brightness(0.6);
     -webkit-filter: brightness(0.6); }
-  .hovereffect h2 {
+  .a_featauredWork h2 {
     position: absolute;
     font-size: 17px;
     color: #FFF;
@@ -214,14 +231,38 @@ body {
     font-weight: 500;
     text-align: center;
     opacity: 0;
-    padding-left: 2em;
-    padding-right: 2em;
     transition: opacity 0.35s, transform .35s;
     -webkit-transform: scale(0, 1);
     -ms-transform: scale(0, 1);
     transform: scale(0, 1); }
-  .hovereffect:hover h2 {
+  .a_featauredWork:hover h2 {
     opacity: 1;
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     transform: scale(1, 1); }
+  .a_featauredWork h2 {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    top: 20%; }
+
+.portfolio {
+  box-shadow: inset 0 2em 50px -15px rgba(0, 0, 0, 0.8);
+  padding-left: 2em;
+  padding-right: 2em; }
+  .portfolio .videoblesk {
+    -webkit-transform: translate(0, -20%);
+    -ms-transform: translate(0, -20%);
+    transform: translate(0, -20%); }
+  .portfolio .arsenycoding {
+    -webkit-transform: translate(0, -45%);
+    -ms-transform: translate(0, -45%);
+    transform: translate(0, -45%); }
+  .portfolio .translator {
+    width: 30%;
+    padding-left: 10%; }
+    .portfolio .translator h2 {
+      left: 25%; }

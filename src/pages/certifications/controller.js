@@ -1,49 +1,55 @@
 import React, { Component } from 'react';
 import Certificate from './certificate/controller';
+import ProGevPythonCert from './images/progevpython.jpg';
+import Python1 from './images/python1.jpg';
+import Python2 from './images/python2.jpg';
+import Prinofcomp1 from './images/prinofcomp1.jpg';
+import Prinofcomp2 from './images/prinofcomp2.jpg';
+import Cs50 from './images/cs50.jpg';
 
 export default class Certifications extends Component {
 	render() {
 		return (
-			<section id="certifications" className="certifications">
+			<section id="certificates" className="certificates">
               <h3>CERTIFICATES</h3>
               
               <Certificate  
-                src={"http://res.cloudinary.com/amikhalev/image/upload/v1460949596/progevpython.jpg"} 
+                src={ProGevPythonCert} 
                 alt={"python intro certificate"}
                 href={"https://www.coursera.org/account/accomplishments/verify/CBEFMDER56"}
                 name={"Programming for Everybody (Python)"}
                 />
 
               <Certificate  
-                src={"http://res.cloudinary.com/amikhalev/image/upload/v1460950161/python1.jpg"} 
+                src={Python1} 
                 alt={"python certificate 1"}
                 href={"https://www.coursera.org/account/accomplishments/verify/LN2C4EY75V"}
                 name={"An Introduction to Interactive Programming in Python (Part 1)"}
                 />
 
               <Certificate  
-                src={"http://res.cloudinary.com/amikhalev/image/upload/v1460949595/python2.jpg"} 
+                src={Python2} 
                 alt={"python certificate 2"}
                 href={"https://www.coursera.org/account/accomplishments/verify/2SGMVVV5CB"}
                 name={"An Introduction to Interactive Programming in Python (Part 2)"}
                 />
 
               <Certificate  
-                src={"http://res.cloudinary.com/amikhalev/image/upload/v1460949595/prinofcomp1.jpg"} 
+                src={Prinofcomp1} 
                 alt={"principles of computing certificate 1"}
                 href={"https://www.coursera.org/account/accomplishments/verify/T623SBQXEE"}
                 name={"Principles of Computing (Part 1)"}
                 />
 
               <Certificate  
-                src={"http://res.cloudinary.com/amikhalev/image/upload/v1460949595/prinofcomp2.jpg"} 
+                src={Prinofcomp2} 
                 alt={"principles of computing certificate 2"}
                 href={"https://www.coursera.org/account/accomplishments/verify/9MCE5JJVDB"}
                 name={"Principles of Computing (Part 2)"}
                 />
 			  
               <Certificate  
-                src={"http://res.cloudinary.com/amikhalev/image/upload/v1460949593/cs50.jpg"} 
+                src={Cs50} 
                 alt={"CS50 certificate"}
                 href={"https://s3.amazonaws.com/verify.edx.org/downloads/f810e27235484907adb84cbd5151fd64/Certificate.pdf"}
                 name={"CS50: Introduction to Computer Science"}

@@ -1,1 +1,24 @@
 @import './featured-work/_style';
+
+.portfolio {
+    box-shadow: inset 0 2em 50px -15px rgba(0,0,0,0.8);
+    padding-left: 2em;
+    padding-right: 2em;
+
+	.videoblesk {
+		@include transform-translate(0,-20%);
+	}
+	
+	.arsenycoding {
+		@include transform-translate(0,-45%);
+	}
+	
+	.translator {
+		width: 30%;
+		padding-left: 10%;
+
+		h2 {
+			left: 25%;	
+		}
+	}
+}

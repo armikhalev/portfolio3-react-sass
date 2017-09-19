@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class Page5 extends Component {
   render() {
       return (
-<section id="page3" data-speed="8" data-type="background">
+<section id="contact">
         <div className="container">
             <div className="row">
                 <div className="contact">
