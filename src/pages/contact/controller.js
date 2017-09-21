@@ -22,7 +22,7 @@ export default class Contact extends Component {
                 
                 <input type="hidden" name="redirect" value="http://www.arsenycoding.com"/>
                 
-				<div><span className="glyphicon-envelope"></span> armikhalev@gmail.com</div>
+				<div className="email-address"><span className="fa fa-envelope"></span> armikhalev@gmail.com</div>
 
 			  </form>
 
