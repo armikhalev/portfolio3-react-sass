@@ -4,6 +4,10 @@
 	z-index: 1;
 	width: 100%;
 
+	a {
+		text-decoration: none;
+	}
+	
 	.navbar-brand img {
 		font-size: 18px;
 		position: fixed;
@@ -41,10 +45,10 @@
 	
 	// Body of the navigation with links 
 	.navbar-collapse { 
-		text-align: center;
 		opacity: .9;
-		top: -252px;
 		position: relative;
+		text-align: center;
+		top: -252px;
 		transition: top .2s ease;
 	}
 
@@ -75,4 +79,8 @@
 		color: #9ee340;
 	}
 
+	@media (min-width: 900px) {
+		.navbar-collapse {
+		}		
+	}
 }

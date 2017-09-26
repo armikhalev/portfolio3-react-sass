@@ -30,7 +30,7 @@ export default class Contact extends Component {
                   <a href="https://www.facebook.com/arseny.mikhalev" target="_blank" rel="noopener noreferrer"><i className="fa fa-lg fa-facebook"></i></a>
                   <a href="https://github.com/armikhalev" target="_blank" rel="noopener noreferrer"><i className="fa fa-lg fa-github"></i></a>
                   <a href="https://linkedin.com/in/arsenymikhalev" target="_blank" rel="noopener noreferrer"><i className="fa fa-lg fa-linkedin"></i></a>
-                  <a href="https://plus.google.com/u/0/116244021911673811587/posts/p/pub" target="_blank" rel="noopener noreferrer"><i className="fa fa-lg fa-google-plus"></i></a>
+                  <a href="https://plus.google.com/u/2/116244021911673811587" target="_blank" rel="noopener noreferrer"><i className="fa fa-lg fa-google-plus"></i></a>
                   <a href="http://www.freecodecamp.com/armikhalev" target="_blank" rel="noopener noreferrer"><i className="fa fa-lg fa-fire"></i></a>
                 </div>
 

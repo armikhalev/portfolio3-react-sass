@@ -1,7 +1,10 @@
 @import './featured-work/_style';
 
 .portfolio {
-	background: url(../images-css/damask_vignette.jpg);
+	background: linear-gradient(
+		rgba(45,40,40,.9),
+		rgba(33,33,33,.9) 
+	) ;
 	box-shadow: inset 0 2em 50px -15px rgba(0,0,0,0.8);
     padding-left: 2em;
     padding-right: 2em;
@@ -23,5 +26,11 @@
 		h2 {
 			left: 25%;	
 		}
+	}
+	
+	@media (min-width: 900px) {
+		.webp & { background: url(../images-css/webP/damask_vignette.webp); }
+
+		.no-webp & {  background: url(../images-css/damask_vignette.jpg); }
 	}
 }

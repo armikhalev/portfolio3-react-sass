@@ -1,12 +1,42 @@
 .myTools {
 	background: #9ee340;
+	position: relative;
 	padding-left: 2em;
     padding-right: 2em;
 	padding-bottom: 4em;
 	box-shadow: inset 0 -2em 50px rgba(0,0,0,0.4);
-
+	width: calc(100% - 4em);
+	
+	// position	
+	display: inline-flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	
 	img {
-		width: 40%;
-		padding: 1em;
+		width: 124px;
 	}
+	
+/* For-phone-only:
+ * @media (max-width: 599px) is the base style, following the mobile-first approach.
+ */
+
+// for-tablet-portrait-up
+	
+	@media (min-width: 600px) {
+		img {
+			width: 100%;
+		}	
+	}
+
+	// for wide-tablet-portrait-up
+	@media (min-width: 720px) { }
+
+	// for-tablet-landscape-up
+	@media (min-width: 900px) { }
+
+	// for-desktop-up
+	@media (min-width: 1200px) { }
+
+	// for-big-desktop-up
+	@media (min-width: 1800px) { }
 }

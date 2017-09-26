@@ -1,0 +1,32 @@
+.footer {
+	.webp &, .no-webp & {
+		background: black; // For Opera mini and not supporting linear-gradient
+		background: repeating-linear-gradient(90deg, #222, #423f3f 50px, #333 100px);
+	}
+	
+	box-shadow: inset 0 3em 50px rgba(0,0,0,.8);
+
+	p {
+		margin: 0; // Overrides default
+
+		color: #fff;
+		padding-left: 24px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		width: 50%;
+	}
+
+	@media (min-width: 900px) {
+
+		.webp & { background: url(../images-css/webP/bottom_banner.webp); }
+
+		.no-webp & { background: url(../images-css/bottom_banner.jpg); }
+
+		height: 100px;
+
+		p {
+			padding-top: 24px;
+		}
+	}
+	
+}

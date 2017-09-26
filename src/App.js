@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import {isMobile} from './util';
 
-import Navbar from './partials/nav-bar/controller';
-import Footer from './partials/footer';
+import MobileNavbar from './pages/nav-bar/mobile-controller';
+import DesktopNavbar from './pages/nav-bar/desktop-controller';
+import Footer from './pages/footer/controller';
 import ArrowUp from './partials/arrow-up/controller';
 import Home from './pages/home/controller';
 import About from './pages/about/controller';
@@ -24,44 +26,89 @@ export default class App extends Component {
     }
 
 	arrowUpClicked() {
-		this.refs.navbar.handleLinkClick("home");
+		if ( isMobile() ) {
+			// this.refs.navbar.handleLinkClick("#home");
+		}
+		else {
+			this.refs.navbar.handleLinkClick("home");
+		}
 	}
 
 	arrowDownClicked() {
-		this.refs.navbar.handleLinkClick("about");
+		if ( isMobile() ) {
+			// this.refs.navbar.handleLinkClick("#about");
+		}
+		else {
+			this.refs.navbar.handleLinkClick("about");
+		}
 	}
 
 	render() {
-		return (
-			<main>
-			  <Navbar ref={"navbar"}/>
-			  
-			  <div className="main" onWheel={this.handleWheel} onClick={this.onToggleNavbarCollapse}>
-				<Home parentClickHandler={this.arrowDownClicked}/>
-				<div className="about-line" id="about"></div>
-				<About/>
+		if ( isMobile() ) {
+			return (
+				<main>
+				  <MobileNavbar ref={"navbar"}/>
+				  
+				  <div className="main" onWheel={this.handleWheel} onClick={this.onToggleNavbarCollapse}>
+					<Home parentClickHandler={this.arrowDownClicked}/>
+					<div className="about-line" id="about"></div>
+					<About/>
 
-				<div className="tools-line" id="myTools">
-			  	  <h3>BUILDING WITH THE BEST TOOLS</h3>
-				</div>
+					<div className="tools-line" id="myTools">
+			  		  <h3>BUILDING WITH THE BEST TOOLS</h3>
+					</div>
 
-				<MyTools/>
-				<Certifications/>
+					<MyTools/>
+					<Certifications/>
 
-				<div className="portfolio-line" id="portfolio">
-			  	  <h3>FEATURED WORKS</h3>
-				</div>
+					<div className="portfolio-line" id="portfolio">
+			  		  <h3>FEATURED WORKS</h3>
+					</div>
 
-				<Portfolio/>
+					<Portfolio/>
 
-				<Contact/>
+					<Contact/>
 
-		  		<Footer/>
+		  			<Footer/>
 
-				<ArrowUp parentClickHandler={this.arrowUpClicked}/>		  
+					<ArrowUp parentClickHandler={this.arrowUpClicked}/>		  
 
-			  </div>
-			</main>
-		);
+				  </div>
+				</main>
+			);
+		}
+		else {
+			return (
+				<main>
+				  <DesktopNavbar ref={"navbar"}/>
+				  
+				  <div className="main" onWheel={this.handleWheel} onClick={this.onToggleNavbarCollapse}>
+					<Home parentClickHandler={this.arrowDownClicked}/>
+					<div className="about-line" id="about"></div>
+					<About/>
+
+					<div className="tools-line" id="myTools">
+			  		  <h3>BUILDING WITH THE BEST TOOLS</h3>
+					</div>
+
+					<MyTools/>
+					<Certifications/>
+
+					<div className="portfolio-line" id="portfolio">
+			  		  <h3>FEATURED WORKS</h3>
+					</div>
+
+					<Portfolio/>
+
+					<Contact/>
+
+		  			<Footer/>
+
+					<ArrowUp parentClickHandler={this.arrowUpClicked}/>		  
+
+				  </div>
+				</main>
+			);
+		}
 	}
 };

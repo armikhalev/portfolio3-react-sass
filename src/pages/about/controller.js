@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import picture from "./arsenythinksgrey.png";
+import pictureWebP from "./webP/arsenythinksgrey.webp";
 
 export default class About extends Component {
     render() {
@@ -12,8 +13,11 @@ export default class About extends Component {
                   <p>I always strive to use the most contemporary technologies for my projects and I love projects that challenge my problem-solving skills.</p>
               </div>
 
-			  <div className="avatar-picture">
-				<img src={picture} className="avatar" alt="Arseny Mikhalev"/>
+				<div className="avatar-picture">
+				  <picture>
+					<source type="image/webp" srcSet={pictureWebP}/>
+					<img src={picture} className="avatar" alt="Arseny Mikhalev"/>
+				  </picture>
               </div>
 			  
             </section>

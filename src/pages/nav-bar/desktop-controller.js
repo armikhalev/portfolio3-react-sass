@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import logo from "./logo.png";
+import logoWebP from "./webP/logo.webp";
 import ListItem from "./list-item";
+import {ListItemsValues} from "./mobile-controller";
+import {TOP_HIDE_NUM} from "./mobile-controller"; // height of navbar to hide it on
 
-const ListItemsValues = [
-	{id:1, link:'home', name:'Home'},
-	{id:2, link:'about', name:'About'},
-	{id:3, link:'myTools', name:'My tools'},
-	{id:4, link:'certificates', name:'Certificates'},
-	{id:5, link:'portfolio', name:'Portfolio'},
-	{id:6, link:'contact', name:'Contact'}
-];
+/* Waits navbar to go beyond visible top side, 
+ * then turns display to none to prevent overlap with other elements 
+ */
+import {hideNavbar_setTimeout} from "./mobile-controller";
 
-const TOP_HIDE_NUM = "-252px"; // height of navbar to hide it on click
 var currentPosition;
 
 function getPageScroll() {
@@ -27,20 +25,6 @@ function getPageScroll() {
 	return yScroll;
 }
 
-/* Waits navbar to go beyond visible top side, 
- * then turns display to none to prevent overlap with other elements 
- */
-function hideNavbar_setTimeout(that) {
-	window.setTimeout(function () {	
-		that.setState({
-			css: {
-				top: TOP_HIDE_NUM,
-				display: "none"
-			}
-		});
-	}, 200);
-}
-
 /* Hides navbar by changing its top positon, 
  * still needs display:none to prevent overlap with other elements,
  * after this func use hideNavbar_setTimeout.
@@ -53,7 +37,7 @@ function hideNavbar(that) {
 	});
 }
 
-export default class Navbar extends Component {
+export default class DesktopNavbar extends Component {
 
 	constructor(props) {
 		super(props);
@@ -71,33 +55,33 @@ export default class Navbar extends Component {
 
 	handleLinkClick(activeLink) {
 		let that = this;
-		
-		// Smooth-scrollig
-		currentPosition = getPageScroll();
-		var targetOffset = document.getElementById(activeLink).offsetTop;
-		var  body = document.body;
 
-		body.classList.add('in-transition');
-		
-		if (currentPosition < targetOffset) {
-			// go forward down
-			body.style.WebkitTransform ="translate(0, -" + (targetOffset - currentPosition) + "px)";
-			body.style.MozTransform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
-			body.style.transform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
-		}
-		else {
-			// Go back up
-			body.style.WebkitTransform = "translate(0, " + (currentPosition - targetOffset) + "px)";
-			body.style.MozTransform = "translate(0, " + (currentPosition - targetOffset) + "px)";
-			body.style.transform = "translate(0, " + (currentPosition - targetOffset) + "px)";
-		}
-		
-		// Resets transform to avoid gaps in rendering
-		window.setTimeout(function () {
-			body.classList.remove('in-transition');
-			body.style.cssText = "";
-			window.scrollTo(0, targetOffset);
-		}, 900);
+			// Smooth-scrollig
+			currentPosition = getPageScroll();
+			var targetOffset = document.getElementById(activeLink).offsetTop;
+			var  body = document.body;
+
+			body.classList.add('in-transition');
+			
+			if (currentPosition < targetOffset) {
+				// go forward down
+				body.style.WebkitTransform ="translate(0, -" + (targetOffset - currentPosition) + "px)";
+				body.style.MozTransform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
+				body.style.transform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
+			}
+			else {
+				// Go back up
+				body.style.WebkitTransform = "translate(0, " + (currentPosition - targetOffset) + "px)";
+				body.style.MozTransform = "translate(0, " + (currentPosition - targetOffset) + "px)";
+				body.style.transform = "translate(0, " + (currentPosition - targetOffset) + "px)";
+			}
+			
+			// Resets transform to avoid gaps in rendering
+			window.setTimeout(function () {
+				body.classList.remove('in-transition');
+				body.style.cssText = "";
+				window.scrollTo(0, targetOffset);
+			}, 900);
 
 		// style active link and hide navbar
 		this.setState({
@@ -153,7 +137,8 @@ export default class Navbar extends Component {
 				<span className="icon-bar"></span>
 			  </button>
 
-			  <a className="navbar-brand" href="#home"><img src={logo} alt="arseny coding logo"/></a>
+			  <a className="navbar-brand" href="#home"><picture>
+				  <source type="image/webp" srcSet={logoWebP}/><img src={logo} alt="arseny coding logo"/></picture></a>
 
 			  <div className="navbar-collapse" style={ this.state.css }>
 				<ul className="navbar-nav">

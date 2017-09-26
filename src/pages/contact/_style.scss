@@ -19,10 +19,10 @@
 
 .contact {
 	box-shadow: 0 -2em 50px 15px rgba(0,0,0,0.8);
-	height: 1195px;
 	padding-left: 2em;
 	padding-right: 2em;
 	padding-top: 2em;
+	padding-bottom: 2em;
 	
 	h4 {
 		@include basic-title-font-h3;
@@ -67,9 +67,12 @@
 		padding: 15px 65px;
 
 		//position
-		@include center-all;
-		top: 365px;
-		width: 184px;
+		position: relative;
+		left: 0;
+		right: 0;
+		margin-right: auto;
+		margin-left: auto;
+		display: block;			// Important, makes margin:auto & left/right:0 work
 		
 		&:hover {
 			background-color: #449d44;
@@ -84,35 +87,33 @@
 
 		// position
 		position: relative;
-		top: 90px;
 		text-align: center;
+		top: 24px;
 	}
-
 	.social {
 		position: relative;
-		top: 110px;
 
 		// position
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		
+		top: 24px;
+
 		a {
 			text-decoration: none;
-			width: 165px;
+			width: 125px;
 		}
 
 		i {
 			color: #5cb85c;
 			padding: .5em;
 			font-size: 5em;
-			width: 2em;
 			transition: all ease .3s;
+			font-size: 60px;
 			
 			&:hover {
 				color: #9ee340;
 			}
 		}
 	}
-	
 }

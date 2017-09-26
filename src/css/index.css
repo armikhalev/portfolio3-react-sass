@@ -48,66 +48,14 @@ body {
     -webkit-filter: invert(100%);
     filter: invert(100%); }
 
-.navbar {
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  width: 100%; }
-  .navbar .navbar-brand img {
-    font-size: 18px;
-    position: fixed;
-    height: 2em;
-    top: 8px;
-    left: 15px; }
-  .navbar .navbar-toggle {
-    position: fixed;
-    top: 8px;
-    right: 15px;
-    padding: 9px 10px;
-    background-color: transparent;
-    border: 1px solid black;
-    border-radius: 4px;
-    cursor: pointer; }
-    .navbar .navbar-toggle:hover {
-      background-color: #333; }
-  .navbar .icon-bar {
-    display: block;
-    background: white;
-    width: 22px;
-    height: 1px; }
-  .navbar .icon-bar:nth-child(2) {
-    margin-bottom: 5px;
-    margin-top: 5px; }
-  .navbar .navbar-collapse {
-    text-align: center;
-    opacity: .9;
-    top: -252px;
-    position: relative;
-    transition: top .2s ease; }
-  .navbar ul {
-    list-style: none;
-    background-color: #404040;
-    padding-left: 0;
-    margin: 0; }
-  .navbar li {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-decoration: none;
-    color: #fff;
-    opacity: .9;
-    font-size: 1.2em;
-    transition: color .3s ease-in-out; }
-  .navbar li.active {
-    background-color: #080808; }
-  .navbar li:hover {
-    color: #9ee340; }
-
 .home {
-  background: url(../images-css/bottom_banner.jpg);
   position: relative;
   height: 100vh;
   box-shadow: inset 0px -20px 50px rgba(0, 0, 0, 0.8);
   padding-top: 1px; }
+  .webp .home, .no-webp .home {
+    background: black;
+    background: repeating-linear-gradient(90deg, #222, #423f3f 50px, #333 100px); }
   .home .welcome {
     position: relative;
     top: 80px; }
@@ -127,10 +75,16 @@ body {
   .home .arrow-down {
     position: absolute;
     bottom: 35px;
+    padding-bottom: 35px;
     left: 0;
     right: 0;
     margin: 0 auto;
     width: 77px; }
+  @media (min-width: 900px) {
+    .webp .home {
+      background: url(../images-css/webP/bottom_banner.webp); }
+    .no-webp .home {
+      background: url(../images-css/bottom_banner.jpg); } }
 
 .about {
   height: 29em;
@@ -151,13 +105,23 @@ body {
 
 .myTools {
   background: #9ee340;
+  position: relative;
   padding-left: 2em;
   padding-right: 2em;
   padding-bottom: 4em;
-  box-shadow: inset 0 -2em 50px rgba(0, 0, 0, 0.4); }
+  box-shadow: inset 0 -2em 50px rgba(0, 0, 0, 0.4);
+  width: calc(100% - 4em);
+  display: inline-flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  /* For-phone-only:
+ * @media (max-width: 599px) is the base style, following the mobile-first approach.
+ */ }
   .myTools img {
-    width: 40%;
-    padding: 1em; }
+    width: 124px; }
+  @media (min-width: 600px) {
+    .myTools img {
+      width: 100%; } }
 
 .a_certificate {
   position: relative;
@@ -252,7 +216,7 @@ body {
     top: 20%; }
 
 .portfolio {
-  background: url(../images-css/damask_vignette.jpg);
+  background: linear-gradient(rgba(45, 40, 40, 0.9), rgba(33, 33, 33, 0.9));
   box-shadow: inset 0 2em 50px -15px rgba(0, 0, 0, 0.8);
   padding-left: 2em;
   padding-right: 2em;
@@ -271,13 +235,18 @@ body {
     padding-left: 10%; }
     .portfolio .translator h2 {
       left: 25%; }
+  @media (min-width: 900px) {
+    .webp .portfolio {
+      background: url(../images-css/webP/damask_vignette.webp); }
+    .no-webp .portfolio {
+      background: url(../images-css/damask_vignette.jpg); } }
 
 .contact {
   box-shadow: 0 -2em 50px 15px rgba(0, 0, 0, 0.8);
-  height: 1195px;
   padding-left: 2em;
   padding-right: 2em;
-  padding-top: 2em; }
+  padding-top: 2em;
+  padding-bottom: 2em; }
   .contact h4 {
     color: #FFF;
     font-family: 'basic title font';
@@ -349,14 +318,12 @@ body {
     cursor: pointer;
     font-size: 23px;
     padding: 15px 65px;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    top: 0;
+    position: relative;
     left: 0;
     right: 0;
-    top: 365px;
-    width: 184px; }
+    margin-right: auto;
+    margin-left: auto;
+    display: block; }
     .contact button:hover {
       background-color: #449d44; }
   .contact .email-address {
@@ -365,22 +332,100 @@ body {
     color: #333;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     position: relative;
-    top: 90px;
-    text-align: center; }
+    text-align: center;
+    top: 24px; }
   .contact .social {
     position: relative;
-    top: 110px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; }
+    justify-content: center;
+    top: 24px; }
     .contact .social a {
       text-decoration: none;
-      width: 165px; }
+      width: 125px; }
     .contact .social i {
       color: #5cb85c;
       padding: .5em;
       font-size: 5em;
-      width: 2em;
-      transition: all ease .3s; }
+      transition: all ease .3s;
+      font-size: 60px; }
       .contact .social i:hover {
         color: #9ee340; }
+
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%; }
+  .navbar a {
+    text-decoration: none; }
+  .navbar .navbar-brand img {
+    font-size: 18px;
+    position: fixed;
+    height: 2em;
+    top: 8px;
+    left: 15px; }
+  .navbar .navbar-toggle {
+    position: fixed;
+    top: 8px;
+    right: 15px;
+    padding: 9px 10px;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer; }
+    .navbar .navbar-toggle:hover {
+      background-color: #333; }
+  .navbar .icon-bar {
+    display: block;
+    background: white;
+    width: 22px;
+    height: 1px; }
+  .navbar .icon-bar:nth-child(2) {
+    margin-bottom: 5px;
+    margin-top: 5px; }
+  .navbar .navbar-collapse {
+    opacity: .9;
+    position: relative;
+    text-align: center;
+    top: -252px;
+    transition: top .2s ease; }
+  .navbar ul {
+    list-style: none;
+    background-color: #404040;
+    padding-left: 0;
+    margin: 0; }
+  .navbar li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    color: #fff;
+    opacity: .9;
+    font-size: 1.2em;
+    transition: color .3s ease-in-out; }
+  .navbar li.active {
+    background-color: #080808; }
+  .navbar li:hover {
+    color: #9ee340; }
+
+.footer {
+  box-shadow: inset 0 3em 50px rgba(0, 0, 0, 0.8); }
+  .webp .footer, .no-webp .footer {
+    background: black;
+    background: repeating-linear-gradient(90deg, #222, #423f3f 50px, #333 100px); }
+  .footer p {
+    margin: 0;
+    color: #fff;
+    padding-left: 24px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 50%; }
+  @media (min-width: 900px) {
+    .footer {
+      height: 100px; }
+      .webp .footer {
+        background: url(../images-css/webP/bottom_banner.webp); }
+      .no-webp .footer {
+        background: url(../images-css/bottom_banner.jpg); }
+      .footer p {
+        padding-top: 24px; } }

@@ -1,5 +1,8 @@
 .home {
-	background: url(../images-css/bottom_banner.jpg);
+	.webp &, .no-webp & {
+		background: black; // For Opera mini and not supporting linear-gradient
+		background: repeating-linear-gradient(90deg, #222, #423f3f 50px, #333 100px);
+	}
 	position: relative;
 	height: 100vh;
     box-shadow: inset 0px -20px 50px rgba(0, 0, 0, 0.8);
@@ -33,9 +36,17 @@
 	.arrow-down {
 		position: absolute;
 		bottom: 35px;
+		padding-bottom: 35px;
 		left: 0;
 		right: 0;
 		margin: 0 auto;
 		width: 77px;
 	}
+	
+	@media (min-width: 900px) {
+		.webp & { background: url(../images-css/webP/bottom_banner.webp); }
+
+		.no-webp & { background: url(../images-css/bottom_banner.jpg); }
+	}
+
 }

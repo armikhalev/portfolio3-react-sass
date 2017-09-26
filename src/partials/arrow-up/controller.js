@@ -1,5 +1,8 @@
 import React, {Component } from 'react';
+import {isMobile} from '../../util';
+
 import arrowUp from "./arrow_up.png";
+import arrowUpWebP from "./webP/arrow_up.webp";
 
 export default class ArrowUp extends Component {
 	constructor(props) {
@@ -38,10 +41,27 @@ export default class ArrowUp extends Component {
 	}
 	
 	render() {
-		return (
-			<div className="arrow-up" style={this.state} onClick={this.arrowUpClicked}>
-				<img src={arrowUp} alt="arrow up"/>
-			</div>
-		);
+		if ( isMobile() ) {
+			return (
+				<a href="#home" className="arrow-up" style={this.state} onClick={this.arrowUpClicked}>
+				  
+				  <picture>
+					<source type="image/webp" srcSet={arrowUpWebP}/>
+					<img src={arrowUp} alt="arrow up"/>
+				  </picture>
+				</a>
+			);
+		}
+		else {
+			return (
+				<div className="arrow-up" style={this.state} onClick={this.arrowUpClicked}>
+				  
+				  <picture>
+					<source type="image/webp" srcSet={arrowUpWebP}/>
+					<img src={arrowUp} alt="arrow up"/>
+				  </picture>
+				</div>
+			);
+		}
 	}
 };
