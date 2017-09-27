@@ -14,5 +14,38 @@
 		border-bottom: 1px solid #fff;
 		border-top: 1px solid #fff;
 		width: 80%;
-	}	
+	}
+
+	
+	/* For-phone-only:
+	 * @media (max-width: 599px) is the base style, following the mobile-first approach.
+	 */
+
+	// for-tablet-portrait-up
+	
+	@media (min-width: 600px) {
+		width: 30%;
+
+		h2 {
+			font-size: 14px;
+			top: 0;
+			bottom: 0;
+			padding-top: 0;
+			border-bottom: 0;
+			border-top: 0;
+		}
+	}
+
+	// for wide-tablet-portrait-up
+	@media (min-width: 720px) { }
+
+	// for-tablet-landscape-up
+	@media (min-width: 900px) { }
+
+	// for-desktop-up
+	@media (min-width: 1200px) { }
+
+	// for-big-desktop-up
+	@media (min-width: 1800px) { }
+
 }

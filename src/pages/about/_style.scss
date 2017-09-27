@@ -1,9 +1,9 @@
 .about {
-	height: 29em;
 	font-family: 'Alegreya Sans',sans-serif;
-	text-align: justify;
+	height: 29em;
 	padding-left: 60px;
 	padding-right: 60px;
+	text-align: justify;
 
 	h3 {
 		font-size: 24px;
@@ -20,4 +20,28 @@
 	.avatar {
 		display: none;
 	}
+
+	/* For-phone-only:
+	 * @media (max-width: 599px) is the base style, following the mobile-first approach.
+	 */
+
+	// for-tablet-portrait-up
+	
+	@media (min-width: 600px) {
+		height: 20em;
+	}
+
+	// for wide-tablet-portrait-up
+	@media (min-width: 720px) { }
+
+	// for-tablet-landscape-up
+	@media (min-width: 900px) { }
+
+	// for-desktop-up
+	@media (min-width: 1200px) { }
+
+	// for-big-desktop-up
+	@media (min-width: 1800px) { }
+
+
 }

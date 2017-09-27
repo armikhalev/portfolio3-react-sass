@@ -1,13 +1,35 @@
 .a_featauredWork {
 	position: relative;
-	display: inline-block;
-	width: calc(50% - .5em);
-	margin-left: .5em;
-	
+	width: 50vw;
 	@include hover-effect;
 	
 	h2 {
 		@include center-all;
+		font-size: 14px;
 		top: 20%;
 	}
+
+	/* For-phone-only:
+	 * @media (max-width: 599px) is the base style, following the mobile-first approach.
+	 */
+
+	// for-tablet-portrait-up
+	
+	@media (min-width: 600px) {
+		width: 30vw;
+	}
+
+	// for wide-tablet-portrait-up
+	@media (min-width: 720px) { }
+
+	// for-tablet-landscape-up
+	@media (min-width: 900px) { }
+
+	// for-desktop-up
+	@media (min-width: 1200px) { }
+
+	// for-big-desktop-up
+	@media (min-width: 1800px) { }
+
+
 }

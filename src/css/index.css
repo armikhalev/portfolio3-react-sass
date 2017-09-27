@@ -87,11 +87,14 @@ body {
       background: url(../images-css/bottom_banner.jpg); } }
 
 .about {
-  height: 29em;
   font-family: 'Alegreya Sans',sans-serif;
-  text-align: justify;
+  height: 29em;
   padding-left: 60px;
-  padding-right: 60px; }
+  padding-right: 60px;
+  text-align: justify;
+  /* For-phone-only:
+	 * @media (max-width: 599px) is the base style, following the mobile-first approach.
+	 */ }
   .about h3 {
     font-size: 24px;
     top: 15px;
@@ -102,18 +105,22 @@ body {
     line-height: 1.4; }
   .about .avatar {
     display: none; }
+  @media (min-width: 600px) {
+    .about {
+      height: 20em; } }
 
 .myTools {
   background: #9ee340;
-  position: relative;
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-bottom: 4em;
   box-shadow: inset 0 -2em 50px rgba(0, 0, 0, 0.4);
+  padding-bottom: 4em;
+  padding-left: 2em;
+  padding-top: 2em;
+  position: relative;
   width: calc(100% - 4em);
+  padding-right: 2em;
   display: inline-flex;
-  justify-content: space-around;
   flex-wrap: wrap;
+  justify-content: space-around;
   /* For-phone-only:
  * @media (max-width: 599px) is the base style, following the mobile-first approach.
  */ }
@@ -121,11 +128,14 @@ body {
     width: 124px; }
   @media (min-width: 600px) {
     .myTools img {
-      width: 100%; } }
+      width: 133px; } }
 
 .a_certificate {
   position: relative;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  /* For-phone-only:
+	 * @media (max-width: 599px) is the base style, following the mobile-first approach.
+	 */ }
   .a_certificate img {
     width: 100%;
     transition: filter .35s; }
@@ -162,6 +172,16 @@ body {
     border-bottom: 1px solid #fff;
     border-top: 1px solid #fff;
     width: 80%; }
+  @media (min-width: 600px) {
+    .a_certificate {
+      width: 30%; }
+      .a_certificate h2 {
+        font-size: 14px;
+        top: 0;
+        bottom: 0;
+        padding-top: 0;
+        border-bottom: 0;
+        border-top: 0; } }
 
 .certificates {
   padding-top: 1em;
@@ -169,7 +189,10 @@ body {
   padding-right: 2em;
   padding-bottom: 4em;
   box-shadow: inset 0 -1em 2em rgba(0, 0, 0, 0.4);
-  background-image: linear-gradient(#fff, #b5b5b5); }
+  background-image: linear-gradient(#fff, #b5b5b5);
+  /* For-phone-only:
+	 * @media (max-width: 599px) is the base style, following the mobile-first approach.
+	 */ }
   .certificates h3 {
     color: #FFF;
     font-family: 'basic title font';
@@ -177,12 +200,18 @@ body {
     font-size: 5vw;
     color: #333;
     text-align: center; }
+  @media (min-width: 600px) {
+    .certificates .certificates-block {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: space-around; } }
 
 .a_featauredWork {
   position: relative;
-  display: inline-block;
-  width: calc(50% - .5em);
-  margin-left: .5em; }
+  width: 50vw;
+  /* For-phone-only:
+	 * @media (max-width: 599px) is the base style, following the mobile-first approach.
+	 */ }
   .a_featauredWork img {
     width: 100%;
     transition: filter .35s; }
@@ -213,28 +242,34 @@ body {
     top: 0;
     left: 0;
     right: 0;
+    font-size: 14px;
     top: 20%; }
+  @media (min-width: 600px) {
+    .a_featauredWork {
+      width: 30vw; } }
 
 .portfolio {
   background: linear-gradient(rgba(45, 40, 40, 0.9), rgba(33, 33, 33, 0.9));
   box-shadow: inset 0 2em 50px -15px rgba(0, 0, 0, 0.8);
-  padding-left: 2em;
-  padding-right: 2em;
   padding-top: 2em;
-  padding-bottom: 4em; }
-  .portfolio .videoblesk {
-    -webkit-transform: translate(0, -20%);
-    -ms-transform: translate(0, -20%);
-    transform: translate(0, -20%); }
-  .portfolio .arsenycoding {
-    -webkit-transform: translate(0, -45%);
-    -ms-transform: translate(0, -45%);
-    transform: translate(0, -45%); }
-  .portfolio .translator {
-    width: 30%;
-    padding-left: 10%; }
-    .portfolio .translator h2 {
-      left: 25%; }
+  padding-bottom: 4em;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* For-phone-only:
+	 * @media (max-width: 599px) is the base style, following the mobile-first approach.
+	 */ }
+  @media (min-width: 600px) {
+    .portfolio {
+      align-items: center; }
+      .portfolio .mela-conlang {
+        top: 150px; }
+      .portfolio .videoblesk {
+        align-self: flex-end; }
+      .portfolio .crispythoughts {
+        left: 15vw; }
+      .portfolio .arsenycoding {
+        left: 16vw; } }
   @media (min-width: 900px) {
     .webp .portfolio {
       background: url(../images-css/webP/damask_vignette.webp); }

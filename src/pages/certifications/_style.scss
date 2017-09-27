@@ -13,4 +13,33 @@
 		color: #333; // override
 		text-align: center;
 	}
+
+	/* For-phone-only:
+	 * @media (max-width: 599px) is the base style, following the mobile-first approach.
+	 */
+
+	// for-tablet-portrait-up
+	
+	@media (min-width: 600px) {
+		.certificates-block {
+			// position
+			display: inline-flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+	}
+
+	// for wide-tablet-portrait-up
+	@media (min-width: 720px) { }
+
+	// for-tablet-landscape-up
+	@media (min-width: 900px) { }
+
+	// for-desktop-up
+	@media (min-width: 1200px) { }
+
+	// for-big-desktop-up
+	@media (min-width: 1800px) { }
+
+
 }

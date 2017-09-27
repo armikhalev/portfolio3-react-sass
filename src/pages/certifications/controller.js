@@ -22,55 +22,55 @@ export default class Certifications extends Component {
 		return (
 				<section id="certificates" className="certificates">
 				<h3>CERTIFICATES</h3>
-				
-				<Certificate  
-            src={ProGevPythonCert}
-			webp={ProGevPythonCertWebP}
-            alt={"python intro certificate"}
-            href={"https://www.coursera.org/account/accomplishments/verify/CBEFMDER56"}
-            name={"Programming for Everybody (Python)"}
-                />
+				<div className="certificates-block">				
+				  <Certificate  
+					src={ProGevPythonCert}
+					webp={ProGevPythonCertWebP}
+					alt={"python intro certificate"}
+					href={"https://www.coursera.org/account/accomplishments/verify/CBEFMDER56"}
+					name={"Programming for Everybody (Python)"}
+					/>
 
-				<Certificate  
-            src={Python1}
-			webp={Python1WebP}
-            alt={"python certificate 1"}
-            href={"https://www.coursera.org/account/accomplishments/verify/LN2C4EY75V"}
-            name={"An Introduction to Interactive Programming in Python (Part 1)"}
-                />
+				  <Certificate  
+					src={Python1}
+					webp={Python1WebP}
+					alt={"python certificate 1"}
+					href={"https://www.coursera.org/account/accomplishments/verify/LN2C4EY75V"}
+					name={"An Introduction to Interactive Programming in Python (Part 1)"}
+					/>
 
-				<Certificate  
-            src={Python2}
-			webp={Python2WebP}
-            alt={"python certificate 2"}
-            href={"https://www.coursera.org/account/accomplishments/verify/2SGMVVV5CB"}
-            name={"An Introduction to Interactive Programming in Python (Part 2)"}
-                />
+				  <Certificate  
+					src={Python2}
+					webp={Python2WebP}
+					alt={"python certificate 2"}
+					href={"https://www.coursera.org/account/accomplishments/verify/2SGMVVV5CB"}
+					name={"An Introduction to Interactive Programming in Python (Part 2)"}
+					/>
 
-				<Certificate  
-            src={Prinofcomp1}
-			webp={Prinofcomp1WebP}
-            alt={"principles of computing certificate 1"}
-            href={"https://www.coursera.org/account/accomplishments/verify/T623SBQXEE"}
-            name={"Principles of Computing (Part 1)"}
-                />
+				  <Certificate  
+					src={Prinofcomp1}
+					webp={Prinofcomp1WebP}
+					alt={"principles of computing certificate 1"}
+					href={"https://www.coursera.org/account/accomplishments/verify/T623SBQXEE"}
+					name={"Principles of Computing (Part 1)"}
+					/>
 
-				<Certificate  
-            src={Prinofcomp2}
-			webp={Prinofcomp2WebP}
-            alt={"principles of computing certificate 2"}
-            href={"https://www.coursera.org/account/accomplishments/verify/9MCE5JJVDB"}
-            name={"Principles of Computing (Part 2)"}
-                />
-				
-				<Certificate  
-            src={Cs50}
-			webp={Cs50WebP}
-            alt={"CS50 certificate"}
-            href={"https://s3.amazonaws.com/verify.edx.org/downloads/f810e27235484907adb84cbd5151fd64/Certificate.pdf"}
-            name={"CS50: Introduction to Computer Science"}
-          		/>
-
+				  <Certificate  
+					src={Prinofcomp2}
+					webp={Prinofcomp2WebP}
+					alt={"principles of computing certificate 2"}
+					href={"https://www.coursera.org/account/accomplishments/verify/9MCE5JJVDB"}
+					name={"Principles of Computing (Part 2)"}
+					/>
+				  
+				  <Certificate  
+					src={Cs50}
+					webp={Cs50WebP}
+					alt={"CS50 certificate"}
+					href={"https://s3.amazonaws.com/verify.edx.org/downloads/f810e27235484907adb84cbd5151fd64/Certificate.pdf"}
+					name={"CS50: Introduction to Computer Science"}
+          			/>
+				 </div>
 			</section>
 		);
 	}
