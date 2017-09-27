@@ -43,10 +43,42 @@
 		width: 77px;
 	}
 	
+	/* For-phone-only:
+	 * @media (max-width: 599px) is the base style, following the mobile-first approach.
+	 */
+
+	// for-tablet-portrait-up
+	
+	@media (min-width: 600px) and (orientation: landscape) {
+		.welcome {
+			top: 0px;
+		}
+
+		h1, h2 {
+			line-height: .5;
+		}
+		
+		.arrow-down {
+			bottom: 0px;
+			padding-bottom: 0px;
+		}
+	}
+
+	// for wide-tablet-portrait-up
+	@media (min-width: 720px) { }
+
+	// for-tablet-landscape-up
 	@media (min-width: 900px) {
 		.webp & { background: url(../images-css/webP/bottom_banner.webp); }
 
 		.no-webp & { background: url(../images-css/bottom_banner.jpg); }
 	}
+
+	// for-desktop-up
+	@media (min-width: 1200px) { }
+
+	// for-big-desktop-up
+	@media (min-width: 1800px) { }
+
 
 }
