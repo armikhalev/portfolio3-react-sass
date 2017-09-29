@@ -53,8 +53,8 @@
 	}
 
 	form {
+		@include break-points;
 		position: relative;
-		width: 100%;
 	}
 
 	button {

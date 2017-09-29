@@ -70,11 +70,11 @@ body {
   .home h2 {
     font-family: "Open Sans Condensed", sans-serif;
     font-size: 5vw;
-    text-shadow: 0 3px 5px #000; }
+    text-shadow: 2px -3px 5px #000; }
   .home h1 {
     font-family: 'basic title font';
     font-size: 13vw;
-    text-shadow: 6px 3px 5px #000; }
+    text-shadow: 5px -4px 5px #000; }
   .home .arrow-down {
     position: absolute;
     bottom: 35px;
@@ -83,26 +83,26 @@ body {
     right: 0;
     margin: 0 auto;
     width: 77px; }
-  @media (min-width: 600px) and (orientation: landscape) {
+  @media (min-width: 900px) and (orientation: landscape) {
+    .webp .home {
+      background: url(../images-css/webP/wooden-fence-background.webp) center center/cover no-repeat fixed; }
+    .no-webp .home {
+      background: url(../images-css/wooden-fence-background.jpg) center center/cover no-repeat fixed; }
     .home .welcome {
       top: 0px; }
     .home h1, .home h2 {
-      line-height: .5; }
-    .home .arrow-down {
-      bottom: 0px;
-      padding-bottom: 0px; } }
-  @media (min-width: 900px) {
-    .webp .home {
-      background: url(../images-css/webP/bottom_banner.webp); }
-    .no-webp .home {
-      background: url(../images-css/bottom_banner.jpg); } }
+      line-height: .5; } }
 
 .about {
   font-family: 'Alegreya Sans',sans-serif;
   height: 29em;
   padding-left: 60px;
   padding-right: 60px;
+  padding-bottom: 24px;
   text-align: justify;
+  /* For-phone-only:
+	 * @media (max-width: 599px) is the base style, following the mobile-first approach.
+	 */
   /* For-phone-only:
 	 * @media (max-width: 599px) is the base style, following the mobile-first approach.
 	 */ }
@@ -110,15 +110,42 @@ body {
     font-size: 24px;
     top: 15px;
     position: relative; }
-  .about .about-body {
+  .about .about-text {
     font-size: 18px;
     font-weight: 300;
     line-height: 1.4; }
-  .about .avatar {
+  .about .about-picture {
     display: none; }
+  @media (min-width: 900px) {
+    .about {
+      padding-left: 10%;
+      padding-right: 10%; } }
+  @media (min-width: 1200px) {
+    .about {
+      padding-left: 20%;
+      padding-right: 20%; } }
+  @media (min-width: 1800px) {
+    .about {
+      padding-left: 25%;
+      padding-right: 25%; } }
   @media (min-width: 600px) {
     .about {
       height: 20em; } }
+  @media (min-width: 900px) {
+    .about {
+      height: auto;
+      padding-top: 2em;
+      padding-bottom: 5em;
+      display: inline-flex; }
+      .about .about-text {
+        padding-right: 4em; }
+      .about .about-picture {
+        display: block;
+        padding: 4px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        flex-shrink: 0; } }
 
 .myTools {
   background: #9ee340;
@@ -127,19 +154,31 @@ body {
   padding-left: 2em;
   padding-top: 2em;
   position: relative;
-  width: calc(100% - 4em);
   padding-right: 2em;
   display: inline-flex;
   flex-wrap: wrap;
-  justify-content: space-around;
   /* For-phone-only:
  * @media (max-width: 599px) is the base style, following the mobile-first approach.
  */ }
+  .myTools .tools-collection {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end; }
   .myTools img {
     width: 124px; }
   @media (min-width: 600px) {
+    .myTools {
+      justify-content: center; }
+      .myTools img {
+        width: 133px; } }
+  @media (min-width: 900px) {
     .myTools img {
-      width: 133px; } }
+      width: 220px; } }
+  @media (min-width: 1800px) {
+    .myTools {
+      padding-left: 25%;
+      padding-right: 25%; } }
 
 .a_certificate {
   position: relative;
@@ -354,8 +393,22 @@ body {
       box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
       outline: 0; }
   .contact form {
-    position: relative;
-    width: 100%; }
+    /* For-phone-only:
+	 * @media (max-width: 599px) is the base style, following the mobile-first approach.
+	 */
+    position: relative; }
+    @media (min-width: 900px) {
+      .contact form {
+        padding-left: 10%;
+        padding-right: 10%; } }
+    @media (min-width: 1200px) {
+      .contact form {
+        padding-left: 20%;
+        padding-right: 20%; } }
+    @media (min-width: 1800px) {
+      .contact form {
+        padding-left: 25%;
+        padding-right: 25%; } }
   .contact button {
     background-color: #5cb85c;
     border: 1px solid transparent;
@@ -470,8 +523,8 @@ body {
     .footer {
       height: 100px; }
       .webp .footer {
-        background: url(../images-css/webP/bottom_banner.webp); }
+        background: url(../images-css/webP/wooden-fence-background.webp); }
       .no-webp .footer {
-        background: url(../images-css/bottom_banner.jpg); }
+        background: url(../images-css/wooden-fence-background.jpg); }
       .footer p {
         padding-top: 24px; } }

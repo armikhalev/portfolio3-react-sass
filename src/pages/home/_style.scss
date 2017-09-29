@@ -23,13 +23,13 @@
 	h2 {
 		font-family: "Open Sans Condensed", sans-serif;
 		font-size: 5vw;
-		text-shadow: 0 3px 5px #000;
+		text-shadow: 2px -3px 5px #000;
 	}
 	
 	h1 {
 		font-family: 'basic title font';
 		font-size: 13vw;
-		text-shadow: 6px 3px 5px #000;
+		text-shadow: 5px -4px 5px #000;
 	}
 
 	// arrow down
@@ -49,29 +49,27 @@
 
 	// for-tablet-portrait-up
 	
-	@media (min-width: 600px) and (orientation: landscape) {
-		.welcome {
-			top: 0px;
-		}
-
-		h1, h2 {
-			line-height: .5;
-		}
+	@media (min-width: 600px) {
 		
-		.arrow-down {
-			bottom: 0px;
-			padding-bottom: 0px;
-		}
 	}
 
 	// for wide-tablet-portrait-up
 	@media (min-width: 720px) { }
 
 	// for-tablet-landscape-up
-	@media (min-width: 900px) {
-		.webp & { background: url(../images-css/webP/bottom_banner.webp); }
+	@media (min-width: 900px) and (orientation: landscape) {
+		.webp & { background: url(../images-css/webP/wooden-fence-background.webp) center center / cover no-repeat fixed; }
 
-		.no-webp & { background: url(../images-css/bottom_banner.jpg); }
+		.no-webp & { background: url(../images-css/wooden-fence-background.jpg) center center / cover no-repeat fixed; }
+
+		.welcome {
+			top: 0px;
+		}
+
+		h1, h2 {
+			line-height: .5;
+		}		
+		
 	}
 
 	// for-desktop-up

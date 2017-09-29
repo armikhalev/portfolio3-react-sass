@@ -3,6 +3,7 @@
 	height: 29em;
 	padding-left: 60px;
 	padding-right: 60px;
+	padding-bottom: 24px;
 	text-align: justify;
 
 	h3 {
@@ -11,16 +12,17 @@
 		position: relative;
 	}
 
-	.about-body {
+	.about-text {
 		font-size: 18px;
 		font-weight: 300;
 		line-height: 1.4;
 	}
 	
-	.avatar {
+	.about-picture {
 		display: none;
 	}
 
+	@include break-points;
 	/* For-phone-only:
 	 * @media (max-width: 599px) is the base style, following the mobile-first approach.
 	 */
@@ -35,13 +37,31 @@
 	@media (min-width: 720px) { }
 
 	// for-tablet-landscape-up
-	@media (min-width: 900px) { }
+	@media (min-width: 900px) {
+		height: auto;
+		padding-top: 2em;
+		padding-bottom: 5em;
+		display: inline-flex;
+		
+		.about-text {
+			padding-right: 4em;
+		}
+		
+		.about-picture {
+			display: block;
+			padding: 4px;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+			flex-shrink: 0; 	// Important, prevents shrinking on iPad
+		}
+	}
 
 	// for-desktop-up
-	@media (min-width: 1200px) { }
+	@media (min-width: 1200px) {
+	}
 
 	// for-big-desktop-up
-	@media (min-width: 1800px) { }
-
-
+	@media (min-width: 1800px) {
+	}
 }

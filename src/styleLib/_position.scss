@@ -7,3 +7,35 @@
 	left: 0;
 	right: 0;
 }
+
+@mixin break-points {
+	/* For-phone-only:
+	 * @media (max-width: 599px) is the base style, following the mobile-first approach.
+	 */
+
+	// for-tablet-portrait-up
+	
+	@media (min-width: 600px) {
+	}
+
+	// for wide-tablet-portrait-up
+	@media (min-width: 720px) { }
+
+	// for-tablet-landscape-up
+	@media (min-width: 900px) {
+		padding-left: 10%;
+		padding-right: 10%;		
+	}
+	
+	// for-desktop-up
+	@media (min-width: 1200px) {
+		padding-left: 20%;
+		padding-right: 20%;
+	}
+
+	// for-big-desktop-up
+	@media (min-width: 1800px) {
+		padding-left: 25%;
+		padding-right: 25%;
+	}
+}

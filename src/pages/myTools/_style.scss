@@ -5,13 +5,18 @@
 	padding-left: 2em;
 	padding-top: 2em;
 	position: relative;
-	width: calc(100% - 4em);
     padding-right: 2em;
 	
 	// position	
 	display: inline-flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+
+	.tools-collection {
+		display: inline-flex;
+		flex-wrap: wrap;				
+		justify-content: space-around;
+		align-items: flex-end;
+	}
 	
 	img {
 		width: 124px;
@@ -20,24 +25,34 @@
 /* For-phone-only:
  * @media (max-width: 599px) is the base style, following the mobile-first approach.
  */
-
-// for-tablet-portrait-up
 	
+	// for-tablet-portrait-up	
 	@media (min-width: 600px) {
+		justify-content: center;
 		img {
 			width: 133px;
 		}	
 	}
 
 	// for wide-tablet-portrait-up
-	@media (min-width: 720px) { }
-
+	@media (min-width: 720px) {
+		
+	}
+	
 	// for-tablet-landscape-up
-	@media (min-width: 900px) { }
+	@media (min-width: 900px) {
+		img {
+			width: 220px;
+		}	
+	 }
 
-	// for-desktop-up
-	@media (min-width: 1200px) { }
+	// for-desktop-up 
+	@media (min-width: 1200px) {
+	}
 
 	// for-big-desktop-up
-	@media (min-width: 1800px) { }
+	@media (min-width: 1800px) {
+		padding-left: 25%;
+		padding-right: 25%;
+	}
 }
