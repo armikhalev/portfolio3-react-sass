@@ -10,31 +10,9 @@ export const ListItemsValues = [
 	{id:6, link:'contact', name:'Contact'}
 ];
 
-export const TOP_HIDE_NUM = "-252px"; // height of navbar to hide it on click
-
-/* Waits navbar to go beyond visible top side, 
- * then turns display to none to prevent overlap with other elements 
- */
-export function hideNavbar_setTimeout(that) {
-	window.setTimeout(function () {	
-		that.setState({
-			css: {
-				top: TOP_HIDE_NUM,
-				display: "none"
-			}
-		});
-	}, 200);
-}
-
-/* Hides navbar by changing its top positon, 
- * still needs display:none to prevent overlap with other elements,
- * after this func use hideNavbar_setTimeout.
- */
-export function hideNavbar(that) {
+export function priv_hideNavbar(that) {
 	that.setState({
-		css: {
-			top: TOP_HIDE_NUM
-		}
+		toggle: "hide"
 	});
 }
 
@@ -43,62 +21,39 @@ export default class MobileNavbar extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			css: {
-				top: TOP_HIDE_NUM,
-				display: "none"
-			},
+			toggle: "hide",
 			active: "home"
 		};
 		this.toggleNavbarCollapse = this.toggleNavbarCollapse.bind(this);
 		this.handleLinkClick = this.handleLinkClick.bind(this);
 		this.hideNavbar = this.hideNavbar.bind(this);
 	}
-
+	
 	handleLinkClick(activeLink) {
-		let that = this;
 
 		// style active link and hide navbar
 		this.setState({
             active: activeLink
         });
 
-		hideNavbar(this);
-		hideNavbar_setTimeout(that);
+		priv_hideNavbar(this);
     }
 	
 	toggleNavbarCollapse() {
-		let display = this.state.css.top;
-		let that = this;
-		
-		if (display === TOP_HIDE_NUM) {
+		if (this.state.toggle === "hide") {
 			// First display navbar
 			this.setState({
-				css: {
-					display: "block"
-				}
+				toggle: "open" 
 			});
-			
-			// Then change navbar's top positon to make it visible
-			window.setTimeout(function () {
-				that.setState({
-					css: {
-						top: "0",
-						display: "block"
-					}
-				});
-			}, 1);
 		}
 		else {
-			hideNavbar(this);
-			hideNavbar_setTimeout(that);
+			priv_hideNavbar(this);
 		}
 	}
 	
 	// For the external use
 	hideNavbar() {
-		let that = this;
-		hideNavbar(this);
-		hideNavbar_setTimeout(that);
+		priv_hideNavbar(this);
 	}
 	
 	render() {
@@ -111,7 +66,7 @@ export default class MobileNavbar extends Component {
 				<span className="icon-bar"></span>
 			  </button>
 
-			  <div className="navbar-collapse" style={ this.state.css }>
+			  <div className="navbar-collapse" data-toggle={this.state.toggle}>
 				<ul className="navbar-nav">
 				  {ListItemsValues.map((val) =>
 									   <ListItem onLinkClick={ this.handleLinkClick } active={this.state.active === val.link ? "active" : ""}

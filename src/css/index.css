@@ -455,6 +455,7 @@ body {
   position: fixed;
   top: 0;
   z-index: 1;
+  height: 0;
   width: 100%; }
   .navbar a {
     text-decoration: none; }
@@ -487,8 +488,11 @@ body {
     opacity: .9;
     position: relative;
     text-align: center;
-    top: -252px;
-    transition: top .2s ease; }
+    transition: all .2s ease; }
+  .navbar .navbar-collapse[data-toggle=hide] {
+    transform: translateY(-100%); }
+  .navbar .navbar-collapse[data-toggle=open] {
+    transform: translateY(0%); }
   .navbar ul {
     list-style: none;
     background-color: #404040;
