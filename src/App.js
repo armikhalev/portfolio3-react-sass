@@ -26,21 +26,11 @@ export default class App extends Component {
     }
 
 	arrowUpClicked() {
-		if ( isMobile() ) {
-			// this.refs.navbar.handleLinkClick("#home");
-		}
-		else {
-			this.refs.navbar.handleLinkClick("home");
-		}
+		this.refs.navbar.handleLinkClick("home");
 	}
 
 	arrowDownClicked() {
-		if ( isMobile() ) {
-			// this.refs.navbar.handleLinkClick("#about");
-		}
-		else {
-			this.refs.navbar.handleLinkClick("about");
-		}
+		this.refs.navbar.handleLinkClick("about");
 	}
 
 	render() {

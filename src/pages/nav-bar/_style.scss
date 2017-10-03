@@ -49,7 +49,7 @@
 		opacity: .9;
 		position: relative;
 		text-align: center;
-		transition: all .2s ease;
+		transition: transform .2s ease;
 	}
 	
 	.navbar-collapse[data-toggle=hide] {
@@ -87,10 +87,32 @@
 		color: #9ee340;
 	}
 
-	@media (min-width: 900px) {
-		.navbar-collapse {
-		}		
-	}
-}
+	@media (min-width: 1200px) {
+		.navbar-toggle {
+			display: none;
+		}
+
+		.navbar-collapse[data-toggle=hide],
+		.navbar-collapse[data-toggle=open] {
+			transform: translateY(0%);
+			background-color: #404040;
+		}
 	
+		.navbar-brand img {
+			z-index: 1;
+			top: 0;
+		}
+		
+		ul {
+			display: inline-flex;
+			justify-content: flex-end;
+			width: 80%;
+		}
+
+		li {
+			width: 100px;
+		}
+
+	}
+}	
 	

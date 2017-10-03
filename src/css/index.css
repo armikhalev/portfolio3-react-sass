@@ -488,7 +488,7 @@ body {
     opacity: .9;
     position: relative;
     text-align: center;
-    transition: all .2s ease; }
+    transition: transform .2s ease; }
   .navbar .navbar-collapse[data-toggle=hide] {
     transform: translateY(-100%); }
   .navbar .navbar-collapse[data-toggle=open] {
@@ -510,6 +510,22 @@ body {
     background-color: #080808; }
   .navbar li:hover {
     color: #9ee340; }
+  @media (min-width: 1200px) {
+    .navbar .navbar-toggle {
+      display: none; }
+    .navbar .navbar-collapse[data-toggle=hide],
+    .navbar .navbar-collapse[data-toggle=open] {
+      transform: translateY(0%);
+      background-color: #404040; }
+    .navbar .navbar-brand img {
+      z-index: 1;
+      top: 0; }
+    .navbar ul {
+      display: inline-flex;
+      justify-content: flex-end;
+      width: 80%; }
+    .navbar li {
+      width: 100px; } }
 
 .footer {
   box-shadow: inset 0 3em 50px rgba(0, 0, 0, 0.8); }

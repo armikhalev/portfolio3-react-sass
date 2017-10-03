@@ -28,7 +28,7 @@ export default class MobileNavbar extends Component {
 		this.handleLinkClick = this.handleLinkClick.bind(this);
 		this.hideNavbar = this.hideNavbar.bind(this);
 	}
-	
+
 	handleLinkClick(activeLink) {
 
 		// style active link and hide navbar
@@ -41,7 +41,6 @@ export default class MobileNavbar extends Component {
 	
 	toggleNavbarCollapse() {
 		if (this.state.toggle === "hide") {
-			// First display navbar
 			this.setState({
 				toggle: "open" 
 			});

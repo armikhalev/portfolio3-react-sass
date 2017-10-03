@@ -4,7 +4,7 @@ import logoWebP from "./webP/logo.webp";
 import ListItem from "./list-item";
 import {ListItemsValues} from "./mobile-controller";
 import {priv_hideNavbar} from "./mobile-controller";
-
+ 
 var currentPosition;
 
 function getPageScroll() {
@@ -17,7 +17,14 @@ function getPageScroll() {
 	} else if (document.body) {
 		yScroll = document.body.scrollTop;
 	}
+
 	return yScroll;
+}
+
+function transform(translate, body) {
+	body.style.WebkitTransform = translate;
+	body.style.MozTransform = translate;
+	body.style.transform = translate;
 }
 
 export default class DesktopNavbar extends Component {
@@ -26,38 +33,67 @@ export default class DesktopNavbar extends Component {
 		super(props);
 		this.state = {
 			toggle: "hide",
-			active: "home"
+			active: "home",
+			contactAndFooterSectionHeight:0
 		};
+		
 		this.toggleNavbarCollapse = this.toggleNavbarCollapse.bind(this);
 		this.handleLinkClick = this.handleLinkClick.bind(this);
 		this.hideNavbar = this.hideNavbar.bind(this);
+		this.update_contactAndFooterSection = this.update_contactAndFooterSection.bind(this);
+	}
+
+	update_contactAndFooterSection() {
+		const contactAndFooterSection = document.getElementById("contact").clientHeight + document.getElementById("footer").clientHeight;
+		
+		this.setState({
+			contactAndFooterSectionHeight: contactAndFooterSection
+		});
+	}
+	
+	componentDidMount() {
+		this.window = window;
+		this.document = document;
+		
+		this.update_contactAndFooterSection();
+	    window.addEventListener("resize", this.update_contactAndFooterSection);
+	}
+	
+	componentWillUnmount() {
+		window.removeEventListener("resize", this.update_contactAndFooterSection);
 	}
 	
 	handleLinkClick(activeLink) {
 		// Smooth-scrollig
 		currentPosition = getPageScroll();
-		var targetOffset = document.getElementById(activeLink).offsetTop;
-		var  body = document.body;
+		var targetOffset = this.document.getElementById(activeLink).offsetTop;
+		var  body = this.document.body;
 
 		body.classList.add('in-transition');
-		
-		if (currentPosition < targetOffset) {
-			// go forward down
-			body.style.WebkitTransform ="translate(0, -" + (targetOffset - currentPosition) + "px)";
-			body.style.MozTransform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
-			body.style.transform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
+
+
+		if ( (this.window.innerHeight > this.state.contactAndFooterSectionHeight) && (activeLink === "contact") )		 {
+			// Calculate gap caused by window being bigger than contact div
+			// subtracting this gap prevents translation over the edge
+			let gapWindowContact = this.window.innerHeight - this.state.contactAndFooterSectionHeight;
+			let forwardDiff = "translateY(-" + (targetOffset - currentPosition -  gapWindowContact) + "px)";
+			transform(forwardDiff, body);
+		}
+		else if (currentPosition < targetOffset) {
+			// Go forward down
+			let forwardDiff = "translateY(-" + (targetOffset - currentPosition) + "px)";
+			transform(forwardDiff, body);
 		}
 		else {
 			// Go back up
-			body.style.WebkitTransform = "translate(0, " + (currentPosition - targetOffset) + "px)";
-			body.style.MozTransform = "translate(0, " + (currentPosition - targetOffset) + "px)";
-			body.style.transform = "translate(0, " + (currentPosition - targetOffset) + "px)";
+			let backDiff = "translateY(" + (currentPosition - targetOffset) + "px)";
+			transform(backDiff, body);
 		}
 		
 		// Resets transform to avoid gaps in rendering
 		setTimeout(() => {
 				body.classList.remove('in-transition');
-				body.style.cssText = "";
+ 				body.style.cssText = "";
 				window.scrollTo(0, targetOffset);
 			}, 900);
 
@@ -68,10 +104,9 @@ export default class DesktopNavbar extends Component {
 
 		priv_hideNavbar(this);
     }
-	
-	toggleNavbarCollapse() {		
+
+	toggleNavbarCollapse() {
 		if (this.state.toggle === "hide") {
-			// First display navbar
 			this.setState({
 				toggle: "open" 
 			});
@@ -85,7 +120,7 @@ export default class DesktopNavbar extends Component {
 	hideNavbar() {
 		priv_hideNavbar(this);
 	}
-	
+
 	render() {
 		return (
 			<nav className="navbar" >
