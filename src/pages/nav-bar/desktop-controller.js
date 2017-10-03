@@ -27,6 +27,10 @@ function transform(translate, body) {
 	body.style.transform = translate;
 }
 
+function getTopPos(el) {
+	return document.getElementById(el).offsetTop;
+}
+
 export default class DesktopNavbar extends Component {
 
 	constructor(props) {
@@ -34,13 +38,14 @@ export default class DesktopNavbar extends Component {
 		this.state = {
 			toggle: "hide",
 			active: "home",
-			contactAndFooterSectionHeight:0
+			contactAndFooterSectionHeight: 0
 		};
 		
 		this.toggleNavbarCollapse = this.toggleNavbarCollapse.bind(this);
 		this.handleLinkClick = this.handleLinkClick.bind(this);
 		this.hideNavbar = this.hideNavbar.bind(this);
 		this.update_contactAndFooterSection = this.update_contactAndFooterSection.bind(this);
+		this.watch_activeLink = this.watch_activeLink.bind(this);
 	}
 
 	update_contactAndFooterSection() {
@@ -50,23 +55,54 @@ export default class DesktopNavbar extends Component {
 			contactAndFooterSectionHeight: contactAndFooterSection
 		});
 	}
+
+	watch_activeLink() {
+		currentPosition = getPageScroll();
+
+		// Get positions of all the sections
+		let positions = [
+			["home", getTopPos("home")],
+			["about", getTopPos("about")],
+			["myTools", getTopPos("myTools")],
+			["certificates", getTopPos("certificates")],
+			["portfolio", getTopPos("portfolio")],
+			["contact", getTopPos("contact")]
+		];
+
+		// Calculate current section
+		const activeLink = positions.reduce((active, cur) => {
+			if (cur[1] >= currentPosition) {
+				active.push(cur);
+			}			
+			return active;
+		}, []);
+		
+		// Set active link
+		this.setState({
+			active: activeLink[0][0]
+		});
+	}
 	
 	componentDidMount() {
 		this.window = window;
 		this.document = document;
 		
 		this.update_contactAndFooterSection();
+		this.watch_activeLink();
+		
 	    window.addEventListener("resize", this.update_contactAndFooterSection);
+	    window.addEventListener("scroll", this.watch_activeLink);		
 	}
 	
 	componentWillUnmount() {
 		window.removeEventListener("resize", this.update_contactAndFooterSection);
+		window.removeEventListener("scroll", this.watch_activeLink);
 	}
 	
 	handleLinkClick(activeLink) {
 		// Smooth-scrollig
 		currentPosition = getPageScroll();
-		var targetOffset = this.document.getElementById(activeLink).offsetTop;
+		var targetOffset = getTopPos(activeLink);
 		var  body = this.document.body;
 
 		body.classList.add('in-transition');
