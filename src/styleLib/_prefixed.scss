@@ -10,6 +10,12 @@
 	transform: translate($x,$y);
 }
 
+@mixin transform-rotate($deg) {
+	-webkit-transform: rotate($deg);
+	-ms-transform: rotate($deg);
+	transform: rotate($deg);
+}
+
 @mixin filter-brightness($num) {
     filter: brightness($num);
     -webkit-filter: brightness($num);

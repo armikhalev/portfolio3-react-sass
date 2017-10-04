@@ -4,7 +4,7 @@ import authorPicture from "./arsenythinksgrey.png";
 export default class About extends Component {
     render() {
         return (
-            <section className="about">
+            <section className="about" data-load={this.props.transition}>
 
               <div className="about-text">
                 <h3><b>Hi and thanks for stopping by!</b></h3>

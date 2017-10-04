@@ -17,6 +17,22 @@
 		justify-content: space-around;
 		align-items: flex-end;
 	}
+
+	&[data-load=true] .upper-tools {
+		animation-name: leftRightTransition;
+		animation-duration: 1s;
+		
+		-webkit-animation-name: leftRightTransition;
+		-webkit-animation-duration: 1s;
+	}
+
+	&[data-load=true] .lower-tools {
+		animation-name: rightLeftTransition;
+		animation-duration: 1s;
+		
+		-webkit-animation-name:  rightLeftTransition;
+		-webkit-animation-duration: 1s;
+	}
 	
 	img {
 		width: 124px;

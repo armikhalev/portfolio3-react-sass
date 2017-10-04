@@ -11,6 +11,15 @@
 	display: inline-flex;
 	flex-wrap: wrap;
 	justify-content: center;
+
+	&[data-load=true] .masterMixer {
+		animation-name: swingTransition;
+		animation-duration: .5s;
+		
+		-webkit-animation-name:  swingTransition;
+		-webkit-animation-duration: .5s;
+	}
+		
 	
 	/* For-phone-only:
 	 * @media (max-width: 599px) is the base style, following the mobile-first approach.
@@ -47,9 +56,9 @@
 
 	// for-tablet-landscape-up
 	@media (min-width: 900px) {
-		.webp & { background: url(../images-css/webP/damask_vignette.webp); }
+		.webp & { background: url(../images-css/webP/damask_vignette.webp) fixed; }
 
-		.no-webp & {  background: url(../images-css/damask_vignette.jpg); }
+		.no-webp & {  background: url(../images-css/damask_vignette.jpg) fixed; }
 	}
 
 	// for-desktop-up

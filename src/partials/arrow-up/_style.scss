@@ -4,7 +4,9 @@
 	z-index: 1;
 	bottom: 20px;
 	right: 5px;
-
+	border-radius: 10%;
+	transition: background .5s ease;
+	
 	&:hover {
 		-webkit-filter: invert(100%);
 		filter: invert(100%)

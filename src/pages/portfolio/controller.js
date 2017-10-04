@@ -33,7 +33,7 @@ export default class DesktopPortfolio extends Component {
 	render() {
 		
 		return (
-				<section className="portfolio">
+				<section className="portfolio" data-load={this.props.transition}>
 				
 				<FeaturedWork
 			className={"mela-conlang"}

@@ -21,10 +21,11 @@ import wordpressWebP from './images/webP/wordpress.webp';
 import emberjsWebP from './images/webP/emberjs-logo.webp';
 
 export default class MyTools extends Component {
+	
 	render() {
 		return (
 
-			<section className="myTools">
+			<section className="myTools" data-load={this.props.transition}>
 			  <div className="upper-tools tools-collection">
 				<picture>
 				  <source type="image/webp" srcSet={htmlCssJsWebP}/>
